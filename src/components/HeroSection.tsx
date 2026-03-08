@@ -14,14 +14,8 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Gradient Overlay */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(90deg, hsla(355, 85%, 77%, 0.85) 0%, hsla(320, 55%, 60%, 0.75) 25%, hsla(290, 30%, 60%, 0.7) 50%, hsla(185, 50%, 49%, 0.6) 75%, hsla(175, 48%, 49%, 0.55) 100%)",
-        }}
-      />
+      {/* Subtle dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/20" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full p-8 md:p-16">
