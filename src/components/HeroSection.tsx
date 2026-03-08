@@ -112,54 +112,53 @@ const HeroSection = () => {
           className="absolute top-0 left-0 w-full h-full"
         />
 
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/30 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent pointer-events-none" />
+        {/* Gradient overlays - stronger for better contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent pointer-events-none md:block hidden" />
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col h-full p-6 md:p-12 lg:p-16">
+        <div className="relative z-10 flex flex-col h-full p-5 md:p-12 lg:p-16">
           {/* Top Bar */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center justify-between"
           >
-            <img src={logo} alt="Dr. Altair Menosso" className="h-8 md:h-10 w-auto" />
+            <img src={logo} alt="Dr. Altair Menosso" className="h-7 md:h-10 w-auto" />
           </motion.div>
 
           {/* Spacer */}
           <div className="flex-1" />
 
           {/* Bottom Content */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4 md:gap-8">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 backdrop-blur-sm text-white text-xs font-semibold tracking-widest uppercase border border-accent/30">
+              <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-accent/20 backdrop-blur-sm text-white text-[10px] md:text-xs font-semibold tracking-widest uppercase border border-accent/30">
                 Palestrante em Harvard, Paris e Dubai
               </span>
             </motion.div>
 
             {/* Main heading + description row */}
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-16">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-16">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="md:flex-1"
               >
-                <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">
+                <p className="text-accent text-xs md:text-sm font-semibold tracking-widest uppercase mb-2 md:mb-3">
                   Especialista
                 </p>
-                <h1 className="text-primary-foreground font-bold leading-[0.92] tracking-tight">
-                  <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+                <h1 className="text-white font-bold leading-[0.92] tracking-tight">
+                  <span className="block text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
                     Harmonização
                   </span>
-                  <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl italic font-medium text-accent">
+                  <span className="block text-4xl sm:text-5xl md:text-7xl lg:text-8xl italic font-medium text-accent">
                     Facial
                   </span>
                 </h1>
@@ -169,20 +168,21 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.5 }}
-                className="md:flex-1 md:max-w-md flex flex-col gap-6 md:items-end md:text-right"
+                className="md:flex-1 md:max-w-md flex flex-col gap-4 md:gap-6 md:items-end md:text-right"
               >
-                <p className="text-white text-base md:text-lg leading-relaxed font-light">
+                <p className="text-white/90 text-sm md:text-lg leading-relaxed font-light">
                   Formado pela Universidade Federal do Paraná, Dr. Altair Menosso já teve o privilégio de palestrar em locais como o{" "}
-                  <span className="text-primary-foreground font-medium">Hospital Albert Einstein</span> e{" "}
-                  <span className="text-primary-foreground font-medium">Universidade de Harvard</span>.
+                  <span className="text-accent font-medium">Hospital Albert Einstein</span> e{" "}
+                  <span className="text-accent font-medium">Universidade de Harvard</span>.
                 </p>
-                <button className="group flex items-center gap-3 bg-accent text-accent-foreground font-semibold px-8 py-4 rounded-full hover:brightness-110 transition-all w-fit text-base">
+                <button className="group flex items-center gap-3 bg-accent text-accent-foreground font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full hover:brightness-110 transition-all w-fit text-sm md:text-base">
                   Saiba mais
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </motion.div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
