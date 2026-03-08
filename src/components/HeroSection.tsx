@@ -139,7 +139,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 backdrop-blur-sm text-accent text-xs font-semibold tracking-widest uppercase border border-accent/30">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 backdrop-blur-sm text-white text-xs font-semibold tracking-widest uppercase border border-accent/30">
                 Palestrante em Harvard, Paris e Dubai
               </span>
             </motion.div>
