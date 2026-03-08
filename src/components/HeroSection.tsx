@@ -1,6 +1,6 @@
 import { useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import logo from "@/assets/logo-dr-altair-menosso.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -126,22 +126,6 @@ const HeroSection = () => {
             className="flex items-center justify-between"
           >
             <img src={logo} alt="Dr. Altair Menosso" className="h-8 md:h-10 w-auto" />
-            <div className="flex items-center gap-3">
-              <a
-                href="#"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-md text-primary-foreground text-xs font-medium tracking-wide uppercase hover:bg-primary-foreground/20 transition-colors border border-primary-foreground/10"
-              >
-                <Phone className="w-3.5 h-3.5" />
-                WhatsApp
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-md text-primary-foreground text-xs font-medium tracking-wide uppercase hover:bg-primary-foreground/20 transition-colors border border-primary-foreground/10"
-              >
-                <MapPin className="w-3.5 h-3.5" />
-                Presencial
-              </a>
-            </div>
           </motion.div>
 
           {/* Spacer */}
@@ -155,7 +139,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 backdrop-blur-sm text-accent text-xs font-semibold tracking-widest uppercase border border-accent/30">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 backdrop-blur-sm text-white text-xs font-semibold tracking-widest uppercase border border-accent/30">
                 Palestrante em Harvard, Paris e Dubai
               </span>
             </motion.div>
@@ -187,7 +171,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.7, delay: 0.5 }}
                 className="md:flex-1 md:max-w-md flex flex-col gap-6 md:items-end md:text-right"
               >
-                <p className="text-primary-foreground/80 text-base md:text-lg leading-relaxed font-light">
+                <p className="text-white text-base md:text-lg leading-relaxed font-light">
                   Formado pela Universidade Federal do Paraná, Dr. Altair Menosso já teve o privilégio de palestrar em locais como o{" "}
                   <span className="text-primary-foreground font-medium">Hospital Albert Einstein</span> e{" "}
                   <span className="text-primary-foreground font-medium">Universidade de Harvard</span>.
