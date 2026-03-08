@@ -82,9 +82,6 @@ const HeroSection = () => {
       start: "top top",
       end: "bottom bottom",
       scrub: 0.5,
-      pin: true,
-      pinSpacing: true,
-      anticipatePin: 1,
       onUpdate: (self) => {
         targetFrameRef.current = self.progress * (FRAME_COUNT - 1);
       },
@@ -106,84 +103,86 @@ const HeroSection = () => {
 
   return (
     <div ref={containerRef} className="relative" style={{ height: "200vh" }}>
-      {/* Canvas Background */}
-      <canvas
-        ref={canvasRef}
-        className="fixed top-0 left-0 w-full h-screen"
-        style={{ zIndex: 0 }}
-      />
+      {/* Sticky wrapper for canvas + content */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden">
+        {/* Canvas Background */}
+        <canvas
+          ref={canvasRef}
+          className="absolute top-0 left-0 w-full h-full"
+        />
 
-      {/* Dark overlay for text readability */}
-      <div className="fixed top-0 left-0 w-full h-screen bg-black/20 pointer-events-none" style={{ zIndex: 1 }} />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/20 pointer-events-none" />
 
-      {/* Content */}
-      <div className="fixed top-0 left-0 w-full h-screen flex flex-col p-8 md:p-16 pointer-events-none" style={{ zIndex: 2 }}>
-        {/* Top Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center justify-between pointer-events-auto"
-        >
-          <span className="text-white text-xl md:text-2xl font-bold tracking-tight">
-            FitFlow
-          </span>
-          <button className="px-6 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium tracking-widest uppercase hover:bg-white/30 transition-colors">
-            Menu
-          </button>
-        </motion.div>
-
-        {/* Rating */}
-        <div className="flex-1 flex flex-col justify-center md:justify-start md:pt-24">
+        {/* Content */}
+        <div className="relative z-10 flex flex-col h-full p-8 md:p-16">
+          {/* Top Bar */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex items-center gap-2 text-white/90 text-sm"
+            transition={{ duration: 0.6 }}
+            className="flex items-center justify-between"
           >
-            <span className="font-medium">Excellent 4.9 out of 5</span>
-            <Star className="w-3.5 h-3.5 fill-white text-white" />
-            <span className="text-white/70 font-medium">TrustPoint</span>
-          </motion.div>
-        </div>
-
-        {/* Bottom Content */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-16">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="md:flex-1"
-          >
-            <h1 className="text-white font-bold leading-[0.9] tracking-tight">
-              <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[120px]">
-                Stronger.
-              </span>
-              <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[120px]">
-                Healthier.
-              </span>
-              <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[120px]">
-                You.
-              </span>
-            </h1>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="md:flex-1 md:max-w-md flex flex-col gap-6 md:items-end md:text-right pointer-events-auto"
-          >
-            <p className="text-white/85 text-base md:text-lg leading-relaxed">
-              Transform your body and mindset with expert online coaching.
-              Personalized training, real results, and full support — wherever
-              you are.
-            </p>
-            <button className="group flex items-center gap-3 bg-white text-gray-900 font-semibold px-8 py-4 rounded-full hover:bg-white/90 transition-colors w-fit text-base">
-              Start Your Journey
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <span className="text-white text-xl md:text-2xl font-bold tracking-tight">
+              FitFlow
+            </span>
+            <button className="px-6 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium tracking-widest uppercase hover:bg-white/30 transition-colors">
+              Menu
             </button>
           </motion.div>
+
+          {/* Rating */}
+          <div className="flex-1 flex flex-col justify-center md:justify-start md:pt-24">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex items-center gap-2 text-white/90 text-sm"
+            >
+              <span className="font-medium">Excellent 4.9 out of 5</span>
+              <Star className="w-3.5 h-3.5 fill-white text-white" />
+              <span className="text-white/70 font-medium">TrustPoint</span>
+            </motion.div>
+          </div>
+
+          {/* Bottom Content */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-16">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="md:flex-1"
+            >
+              <h1 className="text-white font-bold leading-[0.9] tracking-tight">
+                <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[120px]">
+                  Stronger.
+                </span>
+                <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[120px]">
+                  Healthier.
+                </span>
+                <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[120px]">
+                  You.
+                </span>
+              </h1>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="md:flex-1 md:max-w-md flex flex-col gap-6 md:items-end md:text-right"
+            >
+              <p className="text-white/85 text-base md:text-lg leading-relaxed">
+                Transform your body and mindset with expert online coaching.
+                Personalized training, real results, and full support — wherever
+                you are.
+              </p>
+              <button className="group flex items-center gap-3 bg-white text-gray-900 font-semibold px-8 py-4 rounded-full hover:bg-white/90 transition-colors w-fit text-base">
+                Start Your Journey
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>
