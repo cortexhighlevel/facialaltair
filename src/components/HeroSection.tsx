@@ -126,22 +126,6 @@ const HeroSection = () => {
             className="flex items-center justify-between"
           >
             <img src={logo} alt="Dr. Altair Menosso" className="h-8 md:h-10 w-auto" />
-            <div className="flex items-center gap-3">
-              <a
-                href="#"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-md text-primary-foreground text-xs font-medium tracking-wide uppercase hover:bg-primary-foreground/20 transition-colors border border-primary-foreground/10"
-              >
-                <Phone className="w-3.5 h-3.5" />
-                WhatsApp
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-md text-primary-foreground text-xs font-medium tracking-wide uppercase hover:bg-primary-foreground/20 transition-colors border border-primary-foreground/10"
-              >
-                <MapPin className="w-3.5 h-3.5" />
-                Presencial
-              </a>
-            </div>
           </motion.div>
 
           {/* Spacer */}
