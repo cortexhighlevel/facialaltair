@@ -1,6 +1,7 @@
 import { useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo-dr-altair-menosso.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
