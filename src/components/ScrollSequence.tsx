@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 // Will be populated as images are added
-const FRAME_COUNT = 120;
+const FRAME_COUNT = 10;
 
 const getFramePath = (index: number): string => {
   const padded = String(index + 1).padStart(4, "0");
