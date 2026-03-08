@@ -1,6 +1,6 @@
 import { useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Phone, MapPin } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -103,7 +103,7 @@ const HeroSection = () => {
 
   return (
     <div ref={containerRef} className="relative" style={{ height: "200vh" }}>
-      {/* Sticky wrapper for canvas + content */}
+      {/* Sticky wrapper */}
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {/* Canvas Background */}
         <canvas
@@ -111,11 +111,12 @@ const HeroSection = () => {
           className="absolute top-0 left-0 w-full h-full"
         />
 
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent pointer-events-none" />
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col h-full p-8 md:p-16">
+        <div className="relative z-10 flex flex-col h-full p-6 md:p-12 lg:p-16">
           {/* Top Bar */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -123,65 +124,81 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-between"
           >
-            <span className="text-white text-xl md:text-2xl font-bold tracking-tight">
-              FitFlow
+            <span className="font-['Playfair_Display'] text-primary-foreground text-xl md:text-2xl font-semibold tracking-tight">
+              Dr. Altair Menosso
             </span>
-            <button className="px-6 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium tracking-widest uppercase hover:bg-white/30 transition-colors">
-              Menu
-            </button>
+            <div className="flex items-center gap-3">
+              <a
+                href="#"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-md text-primary-foreground text-xs font-medium tracking-wide uppercase hover:bg-primary-foreground/20 transition-colors border border-primary-foreground/10"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                WhatsApp
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-md text-primary-foreground text-xs font-medium tracking-wide uppercase hover:bg-primary-foreground/20 transition-colors border border-primary-foreground/10"
+              >
+                <MapPin className="w-3.5 h-3.5" />
+                Presencial
+              </a>
+            </div>
           </motion.div>
 
-          {/* Rating */}
-          <div className="flex-1 flex flex-col justify-center md:justify-start md:pt-24">
+          {/* Spacer */}
+          <div className="flex-1" />
+
+          {/* Bottom Content */}
+          <div className="flex flex-col gap-8">
+            {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex items-center gap-2 text-white/90 text-sm"
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="font-medium">Excellent 4.9 out of 5</span>
-              <Star className="w-3.5 h-3.5 fill-white text-white" />
-              <span className="text-white/70 font-medium">TrustPoint</span>
-            </motion.div>
-          </div>
-
-          {/* Bottom Content */}
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-16">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="md:flex-1"
-            >
-              <h1 className="text-white font-bold leading-[0.9] tracking-tight">
-                <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[120px]">
-                  Stronger.
-                </span>
-                <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[120px]">
-                  Healthier.
-                </span>
-                <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[120px]">
-                  You.
-                </span>
-              </h1>
+              <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 backdrop-blur-sm text-accent text-xs font-semibold tracking-widest uppercase border border-accent/30">
+                Palestrante em Harvard, Paris e Dubai
+              </span>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              className="md:flex-1 md:max-w-md flex flex-col gap-6 md:items-end md:text-right"
-            >
-              <p className="text-white/85 text-base md:text-lg leading-relaxed">
-                Transform your body and mindset with expert online coaching.
-                Personalized training, real results, and full support — wherever
-                you are.
-              </p>
-              <button className="group flex items-center gap-3 bg-white text-gray-900 font-semibold px-8 py-4 rounded-full hover:bg-white/90 transition-colors w-fit text-base">
-                Start Your Journey
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </motion.div>
+            {/* Main heading + description row */}
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-16">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="md:flex-1"
+              >
+                <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">
+                  Especialista
+                </p>
+                <h1 className="text-primary-foreground font-bold leading-[0.92] tracking-tight">
+                  <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+                    Harmonização
+                  </span>
+                  <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl italic font-medium text-accent">
+                    Facial
+                  </span>
+                </h1>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+                className="md:flex-1 md:max-w-md flex flex-col gap-6 md:items-end md:text-right"
+              >
+                <p className="text-primary-foreground/80 text-base md:text-lg leading-relaxed font-light">
+                  Formado pela Universidade Federal do Paraná, Dr. Altair Menosso já teve o privilégio de palestrar em locais como o{" "}
+                  <span className="text-primary-foreground font-medium">Hospital Albert Einstein</span> e{" "}
+                  <span className="text-primary-foreground font-medium">Universidade de Harvard</span>.
+                </p>
+                <button className="group flex items-center gap-3 bg-accent text-accent-foreground font-semibold px-8 py-4 rounded-full hover:brightness-110 transition-all w-fit text-base">
+                  Saiba mais
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
