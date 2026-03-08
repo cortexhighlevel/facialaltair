@@ -1,6 +1,7 @@
 import { useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo-dr-altair-menosso.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -124,9 +125,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-between"
           >
-            <span className="font-['Playfair_Display'] text-primary-foreground text-xl md:text-2xl font-semibold tracking-tight">
-              Dr. Altair Menosso
-            </span>
+            <img src={logo} alt="Dr. Altair Menosso" className="h-8 md:h-10 w-auto" />
             <div className="flex items-center gap-3">
               <a
                 href="#"
