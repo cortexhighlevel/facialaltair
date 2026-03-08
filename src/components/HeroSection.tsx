@@ -171,7 +171,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.7, delay: 0.5 }}
                 className="md:flex-1 md:max-w-md flex flex-col gap-6 md:items-end md:text-right"
               >
-                <p className="text-primary-foreground/80 text-base md:text-lg leading-relaxed font-light">
+                <p className="text-white text-base md:text-lg leading-relaxed font-light">
                   Formado pela Universidade Federal do Paraná, Dr. Altair Menosso já teve o privilégio de palestrar em locais como o{" "}
                   <span className="text-primary-foreground font-medium">Hospital Albert Einstein</span> e{" "}
                   <span className="text-primary-foreground font-medium">Universidade de Harvard</span>.
