@@ -152,13 +152,13 @@ Agende sua Consulta
                 <label className="block text-muted-foreground text-[11px] font-medium tracking-wider uppercase mb-2">
                   Procedimento de Interesse
                 </label>
-                <div className="flex flex-wrap gap-2">
+                <div className="grid grid-cols-2 gap-2">
                   {services.map((s) => (
                     <button
                       key={s}
                       type="button"
                       onClick={() => setSelectedService(s === selectedService ? "" : s)}
-                      className={`rounded-full px-4 py-2 text-xs font-medium border transition-all ${
+                      className={`rounded-xl px-3 py-2.5 text-xs font-medium border transition-all text-center ${
                         selectedService === s
                           ? "bg-accent text-accent-foreground border-accent"
                           : "border-border text-muted-foreground hover:border-foreground/30 hover:text-foreground"
