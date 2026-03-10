@@ -16,31 +16,31 @@ const fadeIn = (delay = 0) => ({
 
 const benefits = [
   {
-    icon: Sparkles,
+    icon: iconBeleza,
     title: "Realce a sua beleza natural",
     description:
       "A harmonização facial destaca seus traços únicos, proporcionando um resultado natural e equilibrado, sem parecer artificial.",
   },
   {
-    icon: Clock,
+    icon: iconRejuvenescimento,
     title: "Rejuvenescimento facial",
     description:
       "Suavize rugas, linhas de expressão e sinais de envelhecimento, recuperando a vitalidade e o frescor da pele.",
   },
   {
-    icon: Heart,
+    icon: iconAutoestima,
     title: "Aumento da autoestima e confiança",
     description:
       "Sinta-se mais confiante e feliz com sua aparência, refletindo positivamente em todas as áreas da sua vida.",
   },
   {
-    icon: UserCheck,
+    icon: iconPersonalizado,
     title: "Resultados personalizados",
     description:
       "Cada tratamento é adaptado às suas necessidades e desejos, garantindo um resultado harmonioso e exclusivo.",
   },
   {
-    icon: Syringe,
+    icon: iconMinimamente,
     title: "Procedimentos minimamente invasivos",
     description:
       "Técnicas modernas e seguras, com tempo de recuperação reduzido, permitindo que você retorne rapidamente à sua rotina.",
