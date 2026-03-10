@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import testimonialsBg from "@/assets/testimonials-bg.jpg";
 
 interface Review {
   name: string;
@@ -124,9 +125,10 @@ const TestimonialsSection = () => {
   return (
     <section id="depoimentos" className="py-16 md:py-24 px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="border border-border rounded-3xl bg-card p-6 md:p-8">
+        <div className="border border-border rounded-3xl p-6 md:p-8 relative overflow-hidden" style={{ backgroundImage: `url(${testimonialsBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <div className="absolute inset-0 bg-background/85 backdrop-blur-sm rounded-3xl" />
           {/* Header */}
-          <motion.div {...fadeIn()} className="mb-12">
+          <motion.div {...fadeIn()} className="mb-12 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
               {/* Badge */}
               <div className="lg:col-span-2 flex items-center">
@@ -161,7 +163,7 @@ const TestimonialsSection = () => {
           </motion.div>
 
           {/* Featured Cards */}
-          <div className="rounded-2xl md:rounded-3xl border border-border bg-background overflow-hidden">
+          <div className="rounded-2xl md:rounded-3xl border border-border bg-background/90 backdrop-blur-sm overflow-hidden relative z-10">
             <div className="p-6 md:p-8">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5">
                 {featured.map((review, i) => (
