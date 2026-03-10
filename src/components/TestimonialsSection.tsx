@@ -240,13 +240,13 @@ const TestimonialsSection = () => {
                 ))}
               </div>
 
-              {/* Additional reviews - horizontal scroll */}
+              {/* Additional reviews grid */}
               <motion.div {...fadeIn(0.5)} className="mt-5">
-                <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide" style={{ scrollbarWidth: "none" }}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {rest.map((review) => (
                     <article
                       key={review.name}
-                      className="min-w-[280px] max-w-[320px] shrink-0 rounded-xl ring-1 ring-border bg-card p-5 flex flex-col"
+                      className="rounded-xl ring-1 ring-border bg-card p-5 flex flex-col"
                     >
                       <div className="flex items-center justify-between mb-3">
                         <StarRating rating={review.rating} />
