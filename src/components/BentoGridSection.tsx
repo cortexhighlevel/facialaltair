@@ -131,8 +131,8 @@ const BentoGridSection = () => {
             >
               <div className="p-5 sm:p-6 flex flex-col h-full">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-accent" />
+                  <div className="w-10 h-10 rounded-xl overflow-hidden">
+                    <img src={item.icon} alt={item.title} className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <h3 className="text-lg font-semibold tracking-tight text-foreground">
