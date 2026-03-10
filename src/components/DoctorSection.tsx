@@ -34,13 +34,12 @@ const DoctorSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:flex-1 relative flex items-end justify-center lg:justify-start"
+            className="lg:flex-1 relative flex items-end justify-center lg:justify-start overflow-hidden"
           >
             <img
               src={drImg}
               alt="Dr. Altair Menosso - Especialista em Harmonização Facial"
-              className="w-full max-w-[420px] lg:max-w-none lg:w-full h-[500px] md:h-[650px] lg:h-[700px] object-cover object-top lg:rounded-none block"
-              style={{ marginTop: "-1px" }}
+              className="w-full max-w-[420px] lg:max-w-none lg:w-full h-[500px] md:h-[650px] lg:h-[700px] object-cover object-[center_20%] block"
             />
 
             {/* Gradient fade at bottom on mobile */}
