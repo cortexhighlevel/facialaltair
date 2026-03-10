@@ -109,7 +109,7 @@ const CTABookingSection = () => {
             >
               <div className="text-center mb-1">
                 <h3 className="text-xl md:text-2xl font-semibold text-foreground">
-112:                   Agende sua Consulta
+Agende sua Consulta
                 </h3>
                 <p className="text-muted-foreground text-sm mt-1">
                   Preencha os dados e envie pelo WhatsApp
