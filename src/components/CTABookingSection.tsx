@@ -108,10 +108,10 @@ const CTABookingSection = () => {
               className="rounded-2xl border border-border bg-background p-6 md:p-8 flex flex-col gap-5 shadow-lg"
             >
               <div className="text-center mb-1">
-                <h3 className="text-xl md:text-2xl font-semibold text-background">
-                  Agende sua Consulta
+                <h3 className="text-xl md:text-2xl font-semibold text-foreground">
+112:                   Agende sua Consulta
                 </h3>
-                <p className="text-background/45 text-sm mt-1">
+                <p className="text-muted-foreground text-sm mt-1">
                   Preencha os dados e envie pelo WhatsApp
                 </p>
               </div>
