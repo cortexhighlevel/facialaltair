@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import logoFooter from "@/assets/logo-am-footer.png";
+import GlassButton from "@/components/GlassButton";
 
 const fadeIn = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
