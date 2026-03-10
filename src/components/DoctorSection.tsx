@@ -41,7 +41,7 @@ const DoctorSection = () => {
               src={drImg}
               alt="Dr. Altair Menosso - Especialista em Harmonização Facial"
               className="w-full max-w-[420px] lg:max-w-none lg:w-full h-[500px] md:h-[650px] lg:h-[700px] object-cover block"
-              style={{ objectPosition: "center 15%", transform: "scale(1.03)" }}
+              style={{ objectPosition: "center 20%", transform: "scale(1.08)" }}
             />
 
             {/* Gradient fade at bottom on mobile */}
