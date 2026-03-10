@@ -2,6 +2,7 @@ import { useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import logo from "@/assets/logo-dr-altair-menosso.png";
+import HamburgerMenu from "@/components/HamburgerMenu";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
