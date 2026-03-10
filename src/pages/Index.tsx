@@ -6,6 +6,7 @@ import BentoGridSection from "@/components/BentoGridSection";
 import BeforeAfterSection from "@/components/BeforeAfterSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
+import GalleryCarouselSection from "@/components/GalleryCarouselSection";
 import CTABookingSection from "@/components/CTABookingSection";
 
 const Index = () => {
