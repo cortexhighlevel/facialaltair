@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import drAltairFaq from "@/assets/dr-altair-faq.jpg";
 
 const faqs = [
   {
@@ -75,44 +76,68 @@ const FAQSection = () => {
             </div>
           </motion.div>
 
-          {/* Accordion */}
-          <motion.div {...fadeIn(0.2)}>
-            <div className="rounded-2xl md:rounded-3xl border border-border bg-background overflow-hidden">
-              <div className="p-6 md:p-8">
-                <Accordion type="single" collapsible className="w-full">
-                  {faqs.map((faq, i) => (
-                    <AccordionItem
-                      key={i}
-                      value={`item-${i}`}
-                      className="border-border"
-                    >
-                      <AccordionTrigger className="text-left text-base sm:text-lg font-medium text-foreground hover:no-underline hover:text-accent transition-colors py-5">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
+          {/* Content: Photo + Accordion */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Doctor Photo */}
+            <motion.div {...fadeIn(0.1)} className="relative">
+              <div className="rounded-2xl md:rounded-3xl overflow-hidden h-full">
+                <img
+                  src={drAltairFaq}
+                  alt="Dr. Altair Menosso"
+                  className="w-full h-full object-cover object-top rounded-2xl md:rounded-3xl"
+                  style={{ minHeight: "400px" }}
+                />
+                {/* Stats badge */}
+                <div className="absolute bottom-6 right-6 bg-primary text-primary-foreground rounded-2xl p-5 flex flex-col items-center gap-1 shadow-lg">
+                  <span className="text-3xl font-bold text-background">100%</span>
+                  <span className="text-xs text-background/80 text-center leading-tight">
+                    Procedimentos
+                    <br />
+                    Bem-sucedidos
+                  </span>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* CTA */}
-          <motion.div {...fadeIn(0.4)} className="mt-8 text-center">
-            <p className="text-muted-foreground mb-4">
-              Ainda tem dúvidas? Entre em contato conosco.
-            </p>
-            <a
-              href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20site!%20Tenho%20uma%20d%C3%BAvida%20sobre%20harmoniza%C3%A7%C3%A3o%20facial."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:bg-accent/90 transition-colors"
-            >
-              Fale Conosco
-            </a>
-          </motion.div>
+            {/* Accordion */}
+            <motion.div {...fadeIn(0.2)} className="flex flex-col">
+              <div className="rounded-2xl md:rounded-3xl border border-border bg-background overflow-hidden flex-1">
+                <div className="p-6 md:p-8">
+                  <Accordion type="single" collapsible className="w-full">
+                    {faqs.map((faq, i) => (
+                      <AccordionItem
+                        key={i}
+                        value={`item-${i}`}
+                        className="border-border"
+                      >
+                        <AccordionTrigger className="text-left text-base sm:text-lg font-medium text-foreground hover:no-underline hover:text-accent transition-colors py-5">
+                          {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="mt-6 text-center lg:text-left">
+                <p className="text-muted-foreground mb-4">
+                  Ainda tem dúvidas? Entre em contato conosco.
+                </p>
+                <a
+                  href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20site!%20Tenho%20uma%20d%C3%BAvida%20sobre%20harmoniza%C3%A7%C3%A3o%20facial."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:bg-accent/90 transition-colors"
+                >
+                  Fale Conosco
+                </a>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
