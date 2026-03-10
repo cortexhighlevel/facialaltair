@@ -3,6 +3,7 @@ import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import DoctorSection from "@/components/DoctorSection";
 import BentoGridSection from "@/components/BentoGridSection";
+import BeforeAfterSection from "@/components/BeforeAfterSection";
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <ServicesSection />
       <DoctorSection />
       <BentoGridSection />
+      <BeforeAfterSection />
     </div>
   );
 };
