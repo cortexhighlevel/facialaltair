@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import drImg from "@/assets/dr-altair-menosso.webp";
+import assinaturaImg from "@/assets/assinatura-dr-altair.png";
 
 const credentials = [
   "Universidade Federal do Paraná",
@@ -106,16 +107,23 @@ const DoctorSection = () => {
               ))}
             </div>
 
-            {/* CTA */}
-            <a
-              href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20Google!%20Estou%20navegando%20em%20seu%20site%20de%20Harmoniza%C3%A7%C3%A3o%20Facial%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-sm md:text-base w-fit mt-2"
-            >
-              <Phone className="w-4 h-4" />
-              Agendar Consulta
-            </a>
+            {/* CTA + Signature */}
+            <div className="flex items-center gap-5 mt-2 flex-wrap">
+              <a
+                href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20Google!%20Estou%20navegando%20em%20seu%20site%20de%20Harmoniza%C3%A7%C3%A3o%20Facial%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-sm md:text-base w-fit"
+              >
+                <Phone className="w-4 h-4" />
+                Agendar Consulta
+              </a>
+              <img
+                src={assinaturaImg}
+                alt="Assinatura Dr. Altair Menosso"
+                className="h-12 md:h-16 w-auto opacity-70 invert"
+              />
+            </div>
           </motion.div>
         </div>
 
