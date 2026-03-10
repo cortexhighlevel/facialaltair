@@ -108,7 +108,7 @@ const DoctorSection = () => {
             </div>
 
             {/* CTA + Signature */}
-            <div className="flex items-center gap-5 mt-2 flex-wrap">
+            <div className="flex items-center gap-5 mt-2 flex-wrap justify-center lg:justify-start">
               <a
                 href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20Google!%20Estou%20navegando%20em%20seu%20site%20de%20Harmoniza%C3%A7%C3%A3o%20Facial%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
                 target="_blank"
