@@ -1,6 +1,16 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Syringe } from "lucide-react";
+import { ArrowRight, Sparkles, Syringe, ShieldCheck, Smile, Heart, Star, Users, Phone } from "lucide-react";
 import aboutImg from "@/assets/about-clinic.jpg";
+
+const features = [
+  { icon: Sparkles, label: "Técnicas Avançadas" },
+  { icon: Users, label: "Profissionais Especializados" },
+  { icon: Smile, label: "Resultados Naturais e Personalizados" },
+  { icon: Star, label: "Produtos de Alta Qualidade" },
+  { icon: ShieldCheck, label: "Ambiente Seguro e Confortável" },
+  { icon: Heart, label: "Acompanhamento Personalizado" },
+  { icon: Users, label: "Atendimento Humanizado" },
+];
 
 const AboutSection = () => {
   return (
@@ -14,8 +24,8 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="text-foreground text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1] tracking-tight mb-8 md:mb-12"
         >
-          A beleza do seu rosto,{" "}
-          <span className="italic text-accent">transformada.</span>
+          Como podemos{" "}
+          <span className="italic text-accent">lhe ajudar?</span>
         </motion.h2>
 
         {/* Content Row */}
@@ -35,7 +45,7 @@ const AboutSection = () => {
             />
           </motion.div>
 
-          {/* Right — Text + Cards */}
+          {/* Right — Text + Features */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -43,51 +53,56 @@ const AboutSection = () => {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="flex-1 flex flex-col gap-6"
           >
-            {/* Description + CTA */}
-            <div>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6 max-w-lg">
-                Escolha a clínica do Dr. Altair Menosso como referência em
-                harmonização facial. Seu rosto merece o cuidado de quem é
-                reconhecido internacionalmente por resultados naturais e seguros.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <button className="group flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-sm md:text-base">
-                  Agendar consulta
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="flex items-center gap-2 border border-border text-foreground font-medium px-6 py-3 rounded-full hover:bg-secondary transition-colors text-sm md:text-base">
-                  Conheça
-                </button>
-              </div>
-            </div>
+            {/* Description */}
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+              Na Med Menosso, sabemos que os clientes de harmonização facial se preocupam com resultados artificiais, segurança e a recuperação. Para resolver isso, oferecemos atendimento personalizado, com profissionais experientes que usam técnicas modernas e produtos de alta qualidade. Escutamos suas expectativas, explicamos todo o processo de forma clara e cuidamos de você no pós-procedimento, garantindo resultados naturais e seguros que realçam sua beleza.
+            </p>
 
-            {/* Service Cards */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-              <div className="flex-1 bg-card border border-border rounded-2xl p-6 flex flex-col gap-3 hover:shadow-lg transition-shadow">
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Syringe className="w-5 h-5 text-accent" />
-                </div>
-                <h3 className="text-foreground text-lg font-semibold">
-                  Preenchimento Facial
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Ácido hialurônico para volume, contorno e rejuvenescimento com resultados imediatos.
-                </p>
-              </div>
-              <div className="flex-1 bg-card border border-border rounded-2xl p-6 flex flex-col gap-3 hover:shadow-lg transition-shadow">
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-accent" />
-                </div>
-                <h3 className="text-foreground text-lg font-semibold">
-                  Harmonização Completa
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Protocolos personalizados para equilíbrio e simetria facial com naturalidade.
-                </p>
-              </div>
+            <button className="group flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-sm md:text-base w-fit">
+              Veja nossos Serviços
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+
+            {/* Feature Tags */}
+            <div className="flex flex-wrap gap-2 mt-auto">
+              {features.map((f, i) => (
+                <motion.div
+                  key={f.label}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 + i * 0.05 }}
+                  className="flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 text-sm text-foreground"
+                >
+                  <f.icon className="w-4 h-4 text-accent flex-shrink-0" />
+                  {f.label}
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
+
+        {/* CTA Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-8 md:mt-12 bg-accent/10 border border-accent/20 rounded-2xl md:rounded-[2rem] p-6 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+        >
+          <div>
+            <h3 className="text-foreground text-xl md:text-2xl font-semibold mb-1">
+              Marque uma consulta conosco
+            </h3>
+            <p className="text-muted-foreground text-sm md:text-base">
+              Harmonização facial personalizada. Marque sua consulta e descubra seu potencial.
+            </p>
+          </div>
+          <button className="group flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full hover:brightness-110 transition-all text-sm md:text-base whitespace-nowrap w-fit">
+            <Phone className="w-4 h-4" />
+            Entre em Contato
+          </button>
+        </motion.div>
       </div>
     </section>
   );
