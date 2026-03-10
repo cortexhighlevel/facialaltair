@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
-import { Sparkles, Clock, Heart, UserCheck, Syringe } from "lucide-react";
 import drImg from "@/assets/dr-altair-menosso.webp";
 import serviceHarmonizacao from "@/assets/service-harmonizacao.jpg";
+import iconBeleza from "@/assets/icon-beleza-natural.png";
+import iconRejuvenescimento from "@/assets/icon-rejuvenescimento.png";
+import iconAutoestima from "@/assets/icon-autoestima.png";
+import iconPersonalizado from "@/assets/icon-personalizado.png";
+import iconMinimamente from "@/assets/icon-minimamente-invasivo.png";
 
 const fadeIn = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -12,31 +16,31 @@ const fadeIn = (delay = 0) => ({
 
 const benefits = [
   {
-    icon: Sparkles,
+    icon: iconBeleza,
     title: "Realce a sua beleza natural",
     description:
       "A harmonização facial destaca seus traços únicos, proporcionando um resultado natural e equilibrado, sem parecer artificial.",
   },
   {
-    icon: Clock,
+    icon: iconRejuvenescimento,
     title: "Rejuvenescimento facial",
     description:
       "Suavize rugas, linhas de expressão e sinais de envelhecimento, recuperando a vitalidade e o frescor da pele.",
   },
   {
-    icon: Heart,
+    icon: iconAutoestima,
     title: "Aumento da autoestima e confiança",
     description:
       "Sinta-se mais confiante e feliz com sua aparência, refletindo positivamente em todas as áreas da sua vida.",
   },
   {
-    icon: UserCheck,
+    icon: iconPersonalizado,
     title: "Resultados personalizados",
     description:
       "Cada tratamento é adaptado às suas necessidades e desejos, garantindo um resultado harmonioso e exclusivo.",
   },
   {
-    icon: Syringe,
+    icon: iconMinimamente,
     title: "Procedimentos minimamente invasivos",
     description:
       "Técnicas modernas e seguras, com tempo de recuperação reduzido, permitindo que você retorne rapidamente à sua rotina.",
@@ -104,8 +108,8 @@ const BentoGridSection = () => {
             >
               <div className="p-5 sm:p-6 flex flex-col h-full">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-accent" />
+                  <div className="w-10 h-10 rounded-xl overflow-hidden">
+                    <img src={item.icon} alt={item.title} className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <h3 className="text-lg font-semibold tracking-tight text-foreground">
@@ -127,8 +131,8 @@ const BentoGridSection = () => {
             >
               <div className="p-5 sm:p-6 flex flex-col h-full">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-accent" />
+                  <div className="w-10 h-10 rounded-xl overflow-hidden">
+                    <img src={item.icon} alt={item.title} className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <h3 className="text-lg font-semibold tracking-tight text-foreground">
