@@ -105,20 +105,20 @@ const CTABookingSection = () => {
           <motion.div {...fadeIn(0.15)}>
             <form
               onSubmit={handleSubmit}
-              className="rounded-2xl border border-background/10 bg-background/[0.04] backdrop-blur-sm p-6 md:p-8 flex flex-col gap-5"
+              className="rounded-2xl border border-border bg-background p-6 md:p-8 flex flex-col gap-5 shadow-lg"
             >
               <div className="text-center mb-1">
-                <h3 className="text-xl md:text-2xl font-semibold text-background">
-                  Agende sua Consulta
+                <h3 className="text-xl md:text-2xl font-semibold text-foreground">
+112:                   Agende sua Consulta
                 </h3>
-                <p className="text-background/45 text-sm mt-1">
+                <p className="text-muted-foreground text-sm mt-1">
                   Preencha os dados e envie pelo WhatsApp
                 </p>
               </div>
 
               {/* Nome */}
               <div>
-                <label className="block text-background/40 text-[11px] font-medium tracking-wider uppercase mb-1.5">
+                <label className="block text-muted-foreground text-[11px] font-medium tracking-wider uppercase mb-1.5">
                   Nome completo
                 </label>
                 <input
@@ -128,13 +128,13 @@ const CTABookingSection = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Seu nome"
-                  className="w-full rounded-xl border border-background/10 bg-background/5 px-4 py-3 text-sm text-background placeholder:text-background/25 outline-none focus:border-accent/50 transition-colors"
+                  className="w-full rounded-xl border border-border bg-secondary px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 outline-none focus:border-accent transition-colors"
                 />
               </div>
 
               {/* Telefone */}
               <div>
-                <label className="block text-background/40 text-[11px] font-medium tracking-wider uppercase mb-1.5">
+                <label className="block text-muted-foreground text-[11px] font-medium tracking-wider uppercase mb-1.5">
                   Telefone / WhatsApp
                 </label>
                 <input
@@ -143,13 +143,13 @@ const CTABookingSection = () => {
                   value={phone}
                   onChange={handlePhoneChange}
                   placeholder="(00) 00000-0000"
-                  className="w-full rounded-xl border border-background/10 bg-background/5 px-4 py-3 text-sm text-background placeholder:text-background/25 outline-none focus:border-accent/50 transition-colors"
+                  className="w-full rounded-xl border border-border bg-secondary px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 outline-none focus:border-accent transition-colors"
                 />
               </div>
 
               {/* Procedimento — chips */}
               <div>
-                <label className="block text-background/40 text-[11px] font-medium tracking-wider uppercase mb-2">
+                <label className="block text-muted-foreground text-[11px] font-medium tracking-wider uppercase mb-2">
                   Procedimento de Interesse
                 </label>
                 <div className="flex flex-wrap gap-2">
@@ -161,7 +161,7 @@ const CTABookingSection = () => {
                       className={`rounded-full px-4 py-2 text-xs font-medium border transition-all ${
                         selectedService === s
                           ? "bg-accent text-accent-foreground border-accent"
-                          : "border-background/15 text-background/60 hover:border-background/30 hover:text-background/80"
+                          : "border-border text-muted-foreground hover:border-foreground/30 hover:text-foreground"
                       }`}
                     >
                       {s}
