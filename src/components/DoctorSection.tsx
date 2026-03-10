@@ -121,7 +121,7 @@ const DoctorSection = () => {
               <img
                 src={assinaturaImg}
                 alt="Assinatura Dr. Altair Menosso"
-                className="h-12 md:h-16 w-auto opacity-70 invert"
+                className="h-20 md:h-28 w-auto brightness-0 invert"
               />
             </div>
           </motion.div>
