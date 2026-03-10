@@ -128,7 +128,7 @@ const TestimonialsSection = () => {
         <div className="border border-border rounded-3xl p-6 md:p-8 relative overflow-hidden" style={{ backgroundImage: `url(${testimonialsBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="absolute inset-0 bg-background/85 backdrop-blur-sm rounded-3xl" />
           {/* Header */}
-          <motion.div {...fadeIn()} className="mb-12">
+          <motion.div {...fadeIn()} className="mb-12 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
               {/* Badge */}
               <div className="lg:col-span-2 flex items-center">
