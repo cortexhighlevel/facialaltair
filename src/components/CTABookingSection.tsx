@@ -105,7 +105,7 @@ const CTABookingSection = () => {
           <motion.div {...fadeIn(0.15)}>
             <form
               onSubmit={handleSubmit}
-              className="rounded-2xl border border-background/10 bg-background/[0.04] backdrop-blur-sm p-6 md:p-8 flex flex-col gap-5"
+              className="rounded-2xl border border-border bg-background p-6 md:p-8 flex flex-col gap-5 shadow-lg"
             >
               <div className="text-center mb-1">
                 <h3 className="text-xl md:text-2xl font-semibold text-background">
