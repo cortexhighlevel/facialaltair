@@ -178,10 +178,10 @@ const HeroSection = () => {
                   <span className="text-accent font-medium">Hospital Albert Einstein</span> e{" "}
                   <span className="text-accent font-medium">Universidade de Harvard</span>.
                 </p>
-                <button className="group flex items-center gap-3 bg-accent text-accent-foreground font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full hover:brightness-110 transition-all w-fit text-sm md:text-base">
+                <a href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20Google!%20Estou%20navegando%20em%20seu%20site%20de%20Harmoniza%C3%A7%C3%A3o%20Facial%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 bg-accent text-accent-foreground font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full hover:brightness-110 transition-all w-fit text-sm md:text-base">
                   Saiba mais
                   <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </a>
               </motion.div>
             </div>
           </div>
