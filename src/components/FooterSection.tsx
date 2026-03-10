@@ -45,7 +45,7 @@ const FooterSection = () => {
             <img
               src={logoFooter}
               alt="Logo Dr. Altair Menosso"
-              className="h-14 w-auto brightness-0 invert"
+              className="h-14 w-auto"
             />
             <p className="text-sm text-primary-foreground/60 leading-relaxed">
               Clínica especializada em harmonização facial com foco em
