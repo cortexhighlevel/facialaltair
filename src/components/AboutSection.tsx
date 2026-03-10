@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import aboutImg from "@/assets/about-clinic.jpg";
+import GlassButton from "@/components/GlassButton";
 
 
 const features = [
