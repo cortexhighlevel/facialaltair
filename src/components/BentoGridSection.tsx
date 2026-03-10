@@ -108,9 +108,7 @@ const BentoGridSection = () => {
             >
               <div className="p-5 sm:p-6 flex flex-col h-full">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-10 h-10 rounded-xl overflow-hidden">
-                    <img src={item.icon} alt={item.title} className="w-full h-full object-cover" />
-                  </div>
+                  <img src={item.icon} alt={item.title} className="w-10 h-10 rounded-xl object-cover" />
                 </div>
                 <h3 className="text-lg font-semibold tracking-tight text-foreground">
                   {item.title}
@@ -131,9 +129,7 @@ const BentoGridSection = () => {
             >
               <div className="p-5 sm:p-6 flex flex-col h-full">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-10 h-10 rounded-xl overflow-hidden">
-                    <img src={item.icon} alt={item.title} className="w-full h-full object-cover" />
-                  </div>
+                  <img src={item.icon} alt={item.title} className="w-10 h-10 rounded-xl object-cover" />
                 </div>
                 <h3 className="text-lg font-semibold tracking-tight text-foreground">
                   {item.title}
