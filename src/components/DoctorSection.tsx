@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import drImg from "@/assets/dr-altair-menosso.webp";
+import assinaturaImg from "@/assets/assinatura-dr-altair.png";
 
 const credentials = [
   "Universidade Federal do Paraná",
