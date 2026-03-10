@@ -59,10 +59,10 @@ const AboutSection = () => {
               Na Med Menosso, sabemos que os clientes de harmonização facial se preocupam com resultados artificiais, segurança e a recuperação. Para resolver isso, oferecemos atendimento personalizado, com profissionais experientes que usam técnicas modernas e produtos de alta qualidade. Escutamos suas expectativas, explicamos todo o processo de forma clara e cuidamos de você no pós-procedimento, garantindo resultados naturais e seguros que realçam sua beleza.
             </p>
 
-            <button className="group flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-sm md:text-base w-fit">
+            <a href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20Google!%20Estou%20navegando%20em%20seu%20site%20de%20Harmoniza%C3%A7%C3%A3o%20Facial%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-sm md:text-base w-fit">
               Veja nossos Serviços
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
 
             {/* Feature Tags */}
             <div className="flex flex-wrap gap-2 mt-auto">
