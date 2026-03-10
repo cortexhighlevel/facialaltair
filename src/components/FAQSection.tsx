@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import GlassButton from "@/components/GlassButton";
 import {
   Accordion,
   AccordionContent,
@@ -103,14 +104,9 @@ const FAQSection = () => {
 
             {/* CTA */}
             <div className="mt-8">
-              <a
-                href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20site!%20Tenho%20uma%20d%C3%BAvida%20sobre%20harmoniza%C3%A7%C3%A3o%20facial."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground hover:bg-accent/90 transition-colors"
-              >
+              <GlassButton href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20site!%20Tenho%20uma%20d%C3%BAvida%20sobre%20harmoniza%C3%A7%C3%A3o%20facial.">
                 Agende sua Consulta
-              </a>
+              </GlassButton>
             </div>
           </motion.div>
         </div>

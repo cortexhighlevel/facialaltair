@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Send, CheckCircle } from "lucide-react";
 import { useState } from "react";
+import GlassButton from "@/components/GlassButton";
 
 const fadeIn = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -171,14 +172,10 @@ Agende sua Consulta
               </div>
 
               {/* Submit */}
-              <button
-                type="submit"
-                disabled={!isValid}
-                className="group mt-1 flex items-center justify-center gap-2.5 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground hover:brightness-110 transition-all w-full disabled:opacity-40 disabled:cursor-not-allowed"
-              >
+              <GlassButton type="submit" disabled={!isValid} className="mt-1 w-full">
                 <Send className="w-4 h-4" />
                 Enviar pelo WhatsApp
-              </button>
+              </GlassButton>
             </form>
           </motion.div>
         </div>

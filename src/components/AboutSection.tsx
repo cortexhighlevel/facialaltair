@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import aboutImg from "@/assets/about-clinic.jpg";
+import GlassButton from "@/components/GlassButton";
 
 
 const features = [
@@ -60,10 +61,10 @@ const AboutSection = () => {
               Na Med Menosso, sabemos que os clientes de harmonização facial se preocupam com resultados artificiais, segurança e a recuperação. Para resolver isso, oferecemos atendimento personalizado, com profissionais experientes que usam técnicas modernas e produtos de alta qualidade. Escutamos suas expectativas, explicamos todo o processo de forma clara e cuidamos de você no pós-procedimento, garantindo resultados naturais e seguros que realçam sua beleza.
             </p>
 
-            <a href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20Google!%20Estou%20navegando%20em%20seu%20site%20de%20Harmoniza%C3%A7%C3%A3o%20Facial%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-sm md:text-base w-fit">
+            <GlassButton href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20Google!%20Estou%20navegando%20em%20seu%20site%20de%20Harmoniza%C3%A7%C3%A3o%20Facial%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.">
               Veja nossos Serviços
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+              <ArrowRight className="w-4 h-4" />
+            </GlassButton>
 
             {/* Feature Tags */}
             <div className="flex flex-wrap gap-2 mt-auto">
@@ -100,10 +101,10 @@ const AboutSection = () => {
               Harmonização facial personalizada. Marque sua consulta e descubra seu potencial.
             </p>
           </div>
-          <a href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20Google!%20Estou%20navegando%20em%20seu%20site%20de%20Harmoniza%C3%A7%C3%A3o%20Facial%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full hover:brightness-110 transition-all text-sm md:text-base whitespace-nowrap w-fit">
+          <GlassButton href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20Google!%20Estou%20navegando%20em%20seu%20site%20de%20Harmoniza%C3%A7%C3%A3o%20Facial%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.">
             <Phone className="w-4 h-4" />
             Entre em Contato
-          </a>
+          </GlassButton>
         </motion.div>
       </div>
     </section>

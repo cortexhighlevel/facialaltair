@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import logoFooter from "@/assets/logo-am-footer.png";
+import GlassButton from "@/components/GlassButton";
 
 const fadeIn = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -24,16 +25,12 @@ const FooterSection = () => {
           >
             Vamos conversar sobre o seu tratamento
           </motion.p>
-          <motion.a
-            {...fadeIn(0.1)}
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full text-sm hover:brightness-110 transition-all"
-          >
-            <MessageCircle className="w-4 h-4" />
-            Entrar em Contato
-          </motion.a>
+          <motion.div {...fadeIn(0.1)}>
+            <GlassButton href={whatsappLink}>
+              <MessageCircle className="w-4 h-4" />
+              Entrar em Contato
+            </GlassButton>
+          </motion.div>
         </div>
       </div>
 
