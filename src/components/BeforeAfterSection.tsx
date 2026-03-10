@@ -161,7 +161,7 @@ const BeforeAfterSection = () => {
         </motion.div>
 
         {/* Grid */}
-        <div className="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+        <div className="grid gap-6 md:gap-8 grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
           {cases.map((c, i) => (
             <motion.div key={c.label} {...fadeIn(0.1 + i * 0.15)}>
               <ImageComparison {...c} />
