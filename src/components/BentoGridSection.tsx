@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
-import { Sparkles, Clock, Heart, UserCheck, Syringe } from "lucide-react";
 import drImg from "@/assets/dr-altair-menosso.webp";
 import serviceHarmonizacao from "@/assets/service-harmonizacao.jpg";
+import iconBeleza from "@/assets/icon-beleza-natural.png";
+import iconRejuvenescimento from "@/assets/icon-rejuvenescimento.png";
+import iconAutoestima from "@/assets/icon-autoestima.png";
+import iconPersonalizado from "@/assets/icon-personalizado.png";
+import iconMinimamente from "@/assets/icon-minimamente-invasivo.png";
 
 const fadeIn = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
