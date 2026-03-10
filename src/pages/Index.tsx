@@ -5,6 +5,7 @@ import DoctorSection from "@/components/DoctorSection";
 import BentoGridSection from "@/components/BentoGridSection";
 import BeforeAfterSection from "@/components/BeforeAfterSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import FAQSection from "@/components/FAQSection";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <BentoGridSection />
       <BeforeAfterSection />
       <TestimonialsSection />
+      <FAQSection />
     </div>
   );
 };
