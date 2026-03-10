@@ -161,7 +161,7 @@ const CTABookingSection = () => {
                       className={`rounded-full px-4 py-2 text-xs font-medium border transition-all ${
                         selectedService === s
                           ? "bg-accent text-accent-foreground border-accent"
-                          : "border-background/15 text-background/60 hover:border-background/30 hover:text-background/80"
+                          : "border-border text-muted-foreground hover:border-foreground/30 hover:text-foreground"
                       }`}
                     >
                       {s}
