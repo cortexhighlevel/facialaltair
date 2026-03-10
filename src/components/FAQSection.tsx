@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import GlassButton from "@/components/GlassButton";
 import {
   Accordion,
   AccordionContent,
