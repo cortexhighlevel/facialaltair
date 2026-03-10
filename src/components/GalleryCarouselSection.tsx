@@ -33,7 +33,7 @@ const GalleryCarouselSection = () => {
           {allImages.map((img, i) => (
             <div
               key={i}
-              className="shrink-0 w-[200px] h-[260px] md:w-[280px] md:h-[360px] rounded-2xl overflow-hidden border border-border/20"
+              className="shrink-0 w-[260px] h-[340px] md:w-[340px] md:h-[440px] rounded-2xl overflow-hidden border border-background/10"
             >
               <img
                 src={img.src}
