@@ -65,17 +65,17 @@ const AboutSection = () => {
 
             {/* Feature Tags */}
             <div className="flex flex-wrap gap-2 mt-auto">
-              {features.map((f, i) => (
+              {features.map((label, i) => (
                 <motion.div
-                  key={f.label}
+                  key={label}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.05 }}
                   className="flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 text-sm text-foreground"
                 >
-                  <f.icon className="w-4 h-4 text-accent flex-shrink-0" />
-                  {f.label}
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                  {label}
                 </motion.div>
               ))}
             </div>
