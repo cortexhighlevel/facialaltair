@@ -125,7 +125,8 @@ const TestimonialsSection = () => {
   return (
     <section id="depoimentos" className="py-16 md:py-24 px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="border border-border rounded-3xl bg-card p-6 md:p-8">
+        <div className="border border-border rounded-3xl p-6 md:p-8 relative overflow-hidden" style={{ backgroundImage: `url(${testimonialsBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <div className="absolute inset-0 bg-background/85 backdrop-blur-sm rounded-3xl" />
           {/* Header */}
           <motion.div {...fadeIn()} className="mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
