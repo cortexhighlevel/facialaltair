@@ -8,6 +8,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import GalleryCarouselSection from "@/components/GalleryCarouselSection";
 import CTABookingSection from "@/components/CTABookingSection";
+import FooterSection from "@/components/FooterSection";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <FAQSection />
       <GalleryCarouselSection />
       <CTABookingSection />
+      <FooterSection />
     </div>
   );
 };
