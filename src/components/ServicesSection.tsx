@@ -75,7 +75,7 @@ const ServicesSection = () => {
         {services.map((service, i) => (
           <div
             key={service.number}
-            className="sticky top-0 w-full min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 py-8"
+            className="sticky top-0 w-full min-h-[80vh] md:min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 py-4 md:py-8"
             style={{ zIndex: i + 1 }}
           >
             <motion.div
