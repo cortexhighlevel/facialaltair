@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Send, CheckCircle } from "lucide-react";
 import { useState } from "react";
+import GlassButton from "@/components/GlassButton";
 
 const fadeIn = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
