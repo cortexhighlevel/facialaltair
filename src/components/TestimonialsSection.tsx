@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import testimonialsBg from "@/assets/testimonials-bg.jpg";
 
 interface Review {
   name: string;
