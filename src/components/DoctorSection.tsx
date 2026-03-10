@@ -44,6 +44,15 @@ const DoctorSection = () => {
               style={{ objectPosition: "center 20%" }}
             />
 
+            {/* Gradient fade at top */}
+            <div
+              className="absolute top-0 left-0 right-0 h-24 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to bottom, hsl(214 84% 20%) 0%, transparent 100%)",
+              }}
+            />
+
             {/* Gradient fade at bottom on mobile */}
             <div
               className="absolute bottom-0 left-0 right-0 h-56 lg:hidden pointer-events-none"
