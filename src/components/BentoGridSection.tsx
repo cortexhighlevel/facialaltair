@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
-import { Phone, Award, Clock, Shield, Sparkles, Users } from "lucide-react";
-import serviceHarmonizacao from "@/assets/service-harmonizacao.jpg";
-import serviceBotox from "@/assets/service-botox.jpg";
-import servicePreenchimento from "@/assets/service-preenchimento.jpg";
-import serviceBioestimuladores from "@/assets/service-bioestimuladores.jpg";
-import serviceRinomodelacao from "@/assets/service-rinomodelacao.jpg";
+import { Sparkles, Clock, Heart, UserCheck, Syringe } from "lucide-react";
 import drImg from "@/assets/dr-altair-menosso.webp";
+import serviceHarmonizacao from "@/assets/service-harmonizacao.jpg";
 
 const fadeIn = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -14,8 +10,38 @@ const fadeIn = (delay = 0) => ({
   transition: { duration: 0.6, delay },
 });
 
-const WHATSAPP_URL =
-  "https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20Google!%20Estou%20navegando%20em%20seu%20site%20de%20Harmoniza%C3%A7%C3%A3o%20Facial%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.";
+const benefits = [
+  {
+    icon: Sparkles,
+    title: "Realce a sua beleza natural",
+    description:
+      "A harmonização facial destaca seus traços únicos, proporcionando um resultado natural e equilibrado, sem parecer artificial.",
+  },
+  {
+    icon: Clock,
+    title: "Rejuvenescimento facial",
+    description:
+      "Suavize rugas, linhas de expressão e sinais de envelhecimento, recuperando a vitalidade e o frescor da pele.",
+  },
+  {
+    icon: Heart,
+    title: "Aumento da autoestima e confiança",
+    description:
+      "Sinta-se mais confiante e feliz com sua aparência, refletindo positivamente em todas as áreas da sua vida.",
+  },
+  {
+    icon: UserCheck,
+    title: "Resultados personalizados",
+    description:
+      "Cada tratamento é adaptado às suas necessidades e desejos, garantindo um resultado harmonioso e exclusivo.",
+  },
+  {
+    icon: Syringe,
+    title: "Procedimentos minimamente invasivos",
+    description:
+      "Técnicas modernas e seguras, com tempo de recuperação reduzido, permitindo que você retorne rapidamente à sua rotina.",
+  },
+];
 
 const BentoGridSection = () => {
   return (
@@ -24,16 +50,12 @@ const BentoGridSection = () => {
         {/* Header */}
         <motion.div {...fadeIn()} className="mb-10 md:mb-14">
           <p className="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-3">
-            Diferenciais
+            Vantagens e Benefícios
           </p>
-          <h2 className="text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] max-w-2xl">
-            Por que escolher o{" "}
-            <span className="text-accent">Dr. Altair</span>
+          <h2 className="text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] max-w-3xl">
+            Oferecemos os Melhores{" "}
+            <span className="text-accent">Procedimentos Estéticos</span>
           </h2>
-          <p className="text-muted-foreground text-base md:text-lg mt-4 max-w-xl leading-relaxed">
-            Excelência médica, tecnologia de ponta e resultados naturais que
-            valorizam sua beleza única.
-          </p>
         </motion.div>
 
         {/* Bento Grid */}
@@ -57,168 +79,98 @@ const BentoGridSection = () => {
                 <span className="inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-[11px] font-medium border-accent/30 bg-accent/15 text-accent">
                   DESTAQUE
                 </span>
-                <span className="text-xs" style={{ color: "hsl(214 30% 65%)" }}>
-                  Harmonização Facial
-                </span>
               </div>
               <h3
                 className="text-2xl sm:text-3xl font-semibold tracking-tight"
                 style={{ color: "hsl(0 0% 100%)" }}
               >
-                Resultados naturais que realçam sua beleza
+                {benefits[0].title}
               </h3>
               <p
-                className="mt-3 text-base sm:text-lg leading-relaxed"
+                className="mt-3 text-base sm:text-lg leading-relaxed max-w-lg"
                 style={{ color: "hsl(214 30% 75%)" }}
               >
-                Técnicas avançadas e personalizadas para cada paciente, com foco
-                em harmonia e naturalidade. Cada procedimento é planejado para
-                valorizar seus traços únicos.
+                {benefits[0].description}
               </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-semibold rounded-full px-5 py-2.5 text-sm hover:brightness-110 transition"
-                >
-                  <Phone className="w-4 h-4" />
-                  Agendar Consulta
-                </a>
-                <a
-                  href="#servicos"
-                  className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium backdrop-blur transition"
-                  style={{
-                    background: "hsl(214 84% 25% / 0.5)",
-                    color: "hsl(0 0% 90%)",
-                  }}
-                >
-                  <Sparkles className="w-4 h-4" />
-                  Ver Procedimentos
-                </a>
-              </div>
             </div>
           </motion.div>
 
-          {/* Right top — Experiência Internacional */}
-          <motion.div
-            {...fadeIn(0.2)}
-            className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/50 bg-card"
-          >
-            <div className="p-5 sm:p-6">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-lg font-semibold tracking-tight text-foreground flex items-center gap-2">
-                  <Award className="w-5 h-5 text-accent" />
-                  Experiência Internacional
+          {/* Right column cards */}
+          {benefits.slice(1, 3).map((item, i) => (
+            <motion.div
+              key={item.title}
+              {...fadeIn(0.2 + i * 0.1)}
+              className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/50 bg-card"
+            >
+              <div className="p-5 sm:p-6 flex flex-col h-full">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-accent" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold tracking-tight text-foreground">
+                  {item.title}
                 </h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Formação pela UFPR, palestrante em Harvard e presença na Expo
-                Dubai 2020. Referência em medicina estética com reconhecimento
-                mundial.
-              </p>
-              <div className="mt-4 rounded-xl overflow-hidden">
-                <img
-                  src={serviceBotox}
-                  alt="Procedimento estético avançado"
-                  className="aspect-video w-full object-cover"
-                />
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
 
-          {/* Right bottom — Tecnologia de Ponta */}
-          <motion.div
-            {...fadeIn(0.3)}
-            className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/50 bg-card"
-          >
-            <div className="p-5 sm:p-6">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-lg font-semibold tracking-tight text-foreground flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-accent" />
-                  Tecnologia de Ponta
+          {/* Bottom row — 2 benefit cards + doctor card */}
+          {benefits.slice(3).map((item, i) => (
+            <motion.div
+              key={item.title}
+              {...fadeIn(0.4 + i * 0.1)}
+              className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/50 bg-card"
+            >
+              <div className="p-5 sm:p-6 flex flex-col h-full">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-accent" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold tracking-tight text-foreground">
+                  {item.title}
                 </h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Equipamentos de última geração e técnicas modernas para
-                procedimentos mais seguros e eficazes.
-              </p>
-              <div className="mt-4 rounded-xl overflow-hidden">
-                <img
-                  src={servicePreenchimento}
-                  alt="Tecnologia estética moderna"
-                  className="aspect-video w-full object-cover"
-                />
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
 
-          {/* Bottom row — 3 small cards */}
-          <motion.div
-            {...fadeIn(0.4)}
-            className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/50 bg-card"
-          >
-            <div className="p-5 sm:p-6">
-              <h3 className="text-lg font-semibold tracking-tight text-foreground flex items-center gap-2">
-                <Clock className="w-5 h-5 text-accent" />
-                Atendimento Ágil
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Consultas pontuais e procedimentos eficientes, respeitando o seu
-                tempo sem comprometer a qualidade.
-              </p>
-              <div className="mt-4 rounded-xl overflow-hidden">
-                <img
-                  src={serviceBioestimuladores}
-                  alt="Atendimento rápido"
-                  className="aspect-video w-full object-cover"
-                />
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            {...fadeIn(0.5)}
-            className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/50 bg-card"
-          >
-            <div className="p-5 sm:p-6">
-              <h3 className="text-lg font-semibold tracking-tight text-foreground flex items-center gap-2">
-                <Shield className="w-5 h-5 text-accent" />
-                Segurança Total
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Protocolos rigorosos de segurança e materiais certificados para
-                garantir tranquilidade em cada procedimento.
-              </p>
-              <div className="mt-4 rounded-xl overflow-hidden">
-                <img
-                  src={serviceRinomodelacao}
-                  alt="Segurança nos procedimentos"
-                  className="aspect-video w-full object-cover"
-                />
-              </div>
-            </div>
-          </motion.div>
-
+          {/* Doctor card */}
           <motion.div
             {...fadeIn(0.6)}
-            className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/50 bg-card"
+            className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/50"
+            style={{ background: "hsl(214 84% 20%)" }}
           >
-            <div className="p-5 sm:p-6">
-              <h3 className="text-lg font-semibold tracking-tight text-foreground flex items-center gap-2">
-                <Users className="w-5 h-5 text-accent" />
-                Acompanhamento
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Suporte completo pré e pós-procedimento, com retornos e
-                orientações personalizadas para cada paciente.
-              </p>
-              <div className="mt-4 rounded-xl overflow-hidden">
+            <div className="p-5 sm:p-6 flex flex-col items-center text-center h-full justify-center gap-4">
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-accent/30">
                 <img
-                  src={serviceBotox}
-                  alt="Acompanhamento personalizado"
-                  className="aspect-video w-full object-cover"
+                  src={drImg}
+                  alt="Dr. Altair Menosso"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: "center 15%" }}
                 />
+              </div>
+              <div>
+                <h3
+                  className="text-lg font-semibold tracking-tight"
+                  style={{ color: "hsl(0 0% 100%)" }}
+                >
+                  Dr. Altair{" "}
+                  <span className="text-accent">Menosso</span>
+                </h3>
+                <p
+                  className="mt-1 text-sm leading-relaxed"
+                  style={{ color: "hsl(214 30% 75%)" }}
+                >
+                  Especialista em Harmonização Facial com reconhecimento
+                  internacional
+                </p>
               </div>
             </div>
           </motion.div>
