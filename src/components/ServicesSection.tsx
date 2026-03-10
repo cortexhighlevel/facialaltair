@@ -75,7 +75,7 @@ const ServicesSection = () => {
         {services.map((service, i) => (
           <div
             key={service.number}
-            className="sticky top-0 w-full min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 py-8"
+            className="sticky top-0 w-full min-h-[80vh] md:min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 py-4 md:py-8"
             style={{ zIndex: i + 1 }}
           >
             <motion.div
@@ -123,7 +123,7 @@ const ServicesSection = () => {
       </div>
 
       {/* CTA */}
-      <div className="relative flex flex-col justify-center items-center px-6 py-24 text-center" style={{ zIndex: services.length + 1 }}>
+      <div className="relative flex flex-col justify-center items-center px-6 py-12 md:py-24 text-center bg-background" style={{ zIndex: services.length + 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
