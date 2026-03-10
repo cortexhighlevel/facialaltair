@@ -56,7 +56,7 @@ const CTABookingSection = () => {
   };
 
   return (
-    <section className="relative py-16 md:py-28 px-4 md:px-6 lg:px-8 bg-foreground overflow-hidden">
+    <section className="relative pt-8 md:pt-16 pb-16 md:pb-28 px-4 md:px-6 lg:px-8 bg-foreground overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div
