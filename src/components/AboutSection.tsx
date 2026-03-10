@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Syringe, ShieldCheck, Smile, Heart, Star, Users, Phone } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import aboutImg from "@/assets/about-clinic.jpg";
 
 const features = [
-  { icon: Sparkles, label: "Técnicas Avançadas" },
-  { icon: Users, label: "Profissionais Especializados" },
-  { icon: Smile, label: "Resultados Naturais e Personalizados" },
-  { icon: Star, label: "Produtos de Alta Qualidade" },
-  { icon: ShieldCheck, label: "Ambiente Seguro e Confortável" },
-  { icon: Heart, label: "Acompanhamento Personalizado" },
-  { icon: Users, label: "Atendimento Humanizado" },
+  "Técnicas Avançadas",
+  "Profissionais Especializados",
+  "Resultados Naturais e Personalizados",
+  "Produtos de Alta Qualidade",
+  "Ambiente Seguro e Confortável",
+  "Acompanhamento Personalizado",
+  "Atendimento Humanizado",
 ];
 
 const AboutSection = () => {
@@ -65,17 +65,17 @@ const AboutSection = () => {
 
             {/* Feature Tags */}
             <div className="flex flex-wrap gap-2 mt-auto">
-              {features.map((f, i) => (
+              {features.map((label, i) => (
                 <motion.div
-                  key={f.label}
+                  key={label}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.05 }}
                   className="flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 text-sm text-foreground"
                 >
-                  <f.icon className="w-4 h-4 text-accent flex-shrink-0" />
-                  {f.label}
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                  {label}
                 </motion.div>
               ))}
             </div>
