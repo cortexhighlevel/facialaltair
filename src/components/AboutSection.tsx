@@ -25,7 +25,7 @@ const AboutSection = () => {
           className="text-foreground text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1] tracking-tight mb-8 md:mb-12"
         >
           Como podemos{" "}
-          <span className="italic text-accent">lhe ajudar?</span>
+          <span className="text-accent">lhe ajudar?</span>
         </motion.h2>
 
         {/* Content Row */}
