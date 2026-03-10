@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Send } from "lucide-react";
+import { Send, CheckCircle } from "lucide-react";
 import { useState } from "react";
 
 const fadeIn = (delay = 0) => ({
@@ -9,31 +9,44 @@ const fadeIn = (delay = 0) => ({
   transition: { duration: 0.6, delay },
 });
 
+const services = [
+  "Harmonização Facial",
+  "Toxina Botulínica",
+  "Preenchimento Facial",
+  "Bioestimulador de Colágeno",
+  "Fios de PDO",
+  "Rinomodelação",
+];
+
 const CTABookingSection = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [service, setService] = useState("");
-  const [message, setMessage] = useState("");
+  const [selectedService, setSelectedService] = useState("");
+
+  const formatPhone = (value: string) => {
+    const digits = value.replace(/\D/g, "").slice(0, 11);
+    if (digits.length <= 2) return digits;
+    if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPhone(formatPhone(e.target.value));
+  };
+
+  const isValid = name.trim().length >= 2 && phone.replace(/\D/g, "").length >= 10 && selectedService;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    const trimmedName = name.trim();
-    const trimmedPhone = phone.trim();
-    const trimmedService = service.trim();
-    const trimmedMessage = message.trim();
-
-    if (!trimmedName || !trimmedPhone) return;
+    if (!isValid) return;
 
     const text = [
-      `Olá! Gostaria de agendar uma consulta.`,
-      `Nome: ${trimmedName}`,
-      `Telefone: ${trimmedPhone}`,
-      trimmedService ? `Procedimento: ${trimmedService}` : "",
-      trimmedMessage ? `Mensagem: ${trimmedMessage}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
+      `Olá, Dr. Altair! Vim pelo site e gostaria de agendar uma consulta.`,
+      ``,
+      `👤 Nome: ${name.trim()}`,
+      `📱 Contato: ${phone.trim()}`,
+      `💉 Procedimento: ${selectedService}`,
+    ].join("\n");
 
     window.open(
       `https://api.whatsapp.com/send?phone=5547933802402&text=${encodeURIComponent(text)}`,
@@ -43,164 +56,130 @@ const CTABookingSection = () => {
   };
 
   return (
-    <section className="relative py-20 md:py-28 px-4 md:px-6 lg:px-8 bg-foreground overflow-hidden">
-      {/* Background accents */}
+    <section className="relative py-16 md:py-28 px-4 md:px-6 lg:px-8 bg-foreground overflow-hidden">
+      {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div
-          className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full opacity-[0.07]"
-          style={{ background: "radial-gradient(circle, hsl(var(--accent)), transparent 70%)" }}
-        />
-        <div
-          className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full opacity-[0.05]"
+          className="absolute -top-40 right-0 w-[420px] h-[420px] rounded-full opacity-[0.06]"
           style={{ background: "radial-gradient(circle, hsl(var(--accent)), transparent 70%)" }}
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Left — Content */}
-          <div className="flex flex-col">
-            {/* Badge */}
-            <motion.span
-              {...fadeIn(0)}
-              className="inline-block w-fit text-accent text-xs font-semibold tracking-[0.2em] uppercase mb-4"
-            >
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* Left — Why choose us */}
+          <motion.div {...fadeIn(0)} className="flex flex-col">
+            <span className="text-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
               Porque nos Escolher
-            </motion.span>
+            </span>
 
-            <motion.h2
-              {...fadeIn(0.1)}
-              className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-background mb-6"
-            >
-              Nós Oferecemos uma Linha Completa de{" "}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-background mb-5">
+              Linha Completa de{" "}
               <span className="text-accent">Procedimentos Estéticos</span>
-            </motion.h2>
+            </h2>
 
-            <motion.p
-              {...fadeIn(0.15)}
-              className="text-background/60 text-base md:text-lg leading-relaxed mb-10 max-w-lg"
-            >
-              Transforme sua autoestima! Nossos tratamentos personalizados te
-              farão se sentir renovada. Nosso ambiente acolhedor e equipe
-              especializada te proporcionarão o melhor atendimento.
-            </motion.p>
+            <p className="text-background/55 text-sm md:text-base leading-relaxed mb-8 max-w-md">
+              Nosso ambiente acolhedor e equipe especializada te proporcionarão
+              o melhor atendimento. Agende e eleve sua autoestima!
+            </p>
 
-            {/* Stats */}
-            <motion.div {...fadeIn(0.2)} className="flex gap-8 mb-10">
+            <div className="flex flex-col gap-4">
               {[
-                { value: "100%", label: "Procedimentos\nBem-sucedidos" },
-                { value: "100%", label: "Clientes\nSatisfeitos" },
+                { value: "100%", label: "Procedimentos Bem-sucedidos" },
+                { value: "100%", label: "Clientes Satisfeitos" },
               ].map((stat, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-accent mt-0.5 shrink-0" />
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                    <CheckCircle className="w-5 h-5 text-accent" />
+                  </div>
                   <div>
-                    <span className="block text-3xl font-bold text-background">{stat.value}</span>
-                    <span className="text-background/50 text-sm whitespace-pre-line leading-snug">
-                      {stat.label}
-                    </span>
+                    <span className="text-xl font-bold text-background">{stat.value}</span>
+                    <span className="text-background/50 text-sm ml-2">{stat.label}</span>
                   </div>
                 </div>
               ))}
-            </motion.div>
-
-            {/* WhatsApp direct CTA */}
-            <motion.div {...fadeIn(0.25)}>
-              <a
-                href="https://api.whatsapp.com/send?phone=5547933802402&text=Ol%C3%A1%2C%20vim%20pelo%20site!%20Gostaria%20de%20agendar%20uma%20consulta."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground hover:brightness-110 transition-all"
-              >
-                Agende Agora
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
 
           {/* Right — Form */}
-          <motion.div {...fadeIn(0.2)}>
-            <div className="rounded-2xl border border-background/10 bg-background/5 backdrop-blur-sm p-8 md:p-10">
-              <h3 className="text-2xl font-semibold text-background mb-2">
-                Agende sua Consulta
-              </h3>
-              <p className="text-background/50 text-sm mb-8">
-                Eleve sua autoestima! Preencha o formulário e entraremos em contato.
-              </p>
+          <motion.div {...fadeIn(0.15)}>
+            <form
+              onSubmit={handleSubmit}
+              className="rounded-2xl border border-background/10 bg-background/[0.04] backdrop-blur-sm p-6 md:p-8 flex flex-col gap-5"
+            >
+              <div className="text-center mb-1">
+                <h3 className="text-xl md:text-2xl font-semibold text-background">
+                  Agende sua Consulta
+                </h3>
+                <p className="text-background/45 text-sm mt-1">
+                  Preencha os dados e envie pelo WhatsApp
+                </p>
+              </div>
 
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <div>
-                  <label className="block text-background/40 text-xs font-medium tracking-wider uppercase mb-1.5">
-                    Nome completo *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    maxLength={100}
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Seu nome"
-                    className="w-full rounded-xl border border-background/10 bg-background/5 px-4 py-3 text-sm text-background placeholder:text-background/30 outline-none focus:border-accent/50 transition-colors"
-                  />
+              {/* Nome */}
+              <div>
+                <label className="block text-background/40 text-[11px] font-medium tracking-wider uppercase mb-1.5">
+                  Nome completo
+                </label>
+                <input
+                  type="text"
+                  required
+                  maxLength={100}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Seu nome"
+                  className="w-full rounded-xl border border-background/10 bg-background/5 px-4 py-3 text-sm text-background placeholder:text-background/25 outline-none focus:border-accent/50 transition-colors"
+                />
+              </div>
+
+              {/* Telefone */}
+              <div>
+                <label className="block text-background/40 text-[11px] font-medium tracking-wider uppercase mb-1.5">
+                  Telefone / WhatsApp
+                </label>
+                <input
+                  type="tel"
+                  required
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  placeholder="(00) 00000-0000"
+                  className="w-full rounded-xl border border-background/10 bg-background/5 px-4 py-3 text-sm text-background placeholder:text-background/25 outline-none focus:border-accent/50 transition-colors"
+                />
+              </div>
+
+              {/* Procedimento — chips */}
+              <div>
+                <label className="block text-background/40 text-[11px] font-medium tracking-wider uppercase mb-2">
+                  Procedimento de Interesse
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {services.map((s) => (
+                    <button
+                      key={s}
+                      type="button"
+                      onClick={() => setSelectedService(s === selectedService ? "" : s)}
+                      className={`rounded-full px-4 py-2 text-xs font-medium border transition-all ${
+                        selectedService === s
+                          ? "bg-accent text-accent-foreground border-accent"
+                          : "border-background/15 text-background/60 hover:border-background/30 hover:text-background/80"
+                      }`}
+                    >
+                      {s}
+                    </button>
+                  ))}
                 </div>
+              </div>
 
-                <div>
-                  <label className="block text-background/40 text-xs font-medium tracking-wider uppercase mb-1.5">
-                    Telefone *
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    maxLength={20}
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="(00) 00000-0000"
-                    className="w-full rounded-xl border border-background/10 bg-background/5 px-4 py-3 text-sm text-background placeholder:text-background/30 outline-none focus:border-accent/50 transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-background/40 text-xs font-medium tracking-wider uppercase mb-1.5">
-                    Procedimento de interesse
-                  </label>
-                  <select
-                    value={service}
-                    onChange={(e) => setService(e.target.value)}
-                    className="w-full rounded-xl border border-background/10 bg-background/5 px-4 py-3 text-sm text-background outline-none focus:border-accent/50 transition-colors appearance-none"
-                  >
-                    <option value="" className="text-foreground">Selecione...</option>
-                    <option value="Harmonização Facial" className="text-foreground">Harmonização Facial</option>
-                    <option value="Toxina Botulínica" className="text-foreground">Toxina Botulínica</option>
-                    <option value="Preenchimento Facial" className="text-foreground">Preenchimento Facial</option>
-                    <option value="Bioestimulador de Colágeno" className="text-foreground">Bioestimulador de Colágeno</option>
-                    <option value="Fios de PDO" className="text-foreground">Fios de PDO</option>
-                    <option value="Rinomodelação" className="text-foreground">Rinomodelação</option>
-                    <option value="Outro" className="text-foreground">Outro</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-background/40 text-xs font-medium tracking-wider uppercase mb-1.5">
-                    Mensagem
-                  </label>
-                  <textarea
-                    rows={3}
-                    maxLength={500}
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Deixe sua mensagem (opcional)"
-                    className="w-full rounded-xl border border-background/10 bg-background/5 px-4 py-3 text-sm text-background placeholder:text-background/30 outline-none focus:border-accent/50 transition-colors resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="group mt-2 flex items-center justify-center gap-3 rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground hover:brightness-110 transition-all w-full"
-                >
-                  <Send className="w-4 h-4" />
-                  Agende Sua Consulta Agora Mesmo!
-                </button>
-              </form>
-            </div>
+              {/* Submit */}
+              <button
+                type="submit"
+                disabled={!isValid}
+                className="group mt-1 flex items-center justify-center gap-2.5 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground hover:brightness-110 transition-all w-full disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                <Send className="w-4 h-4" />
+                Enviar pelo WhatsApp
+              </button>
+            </form>
           </motion.div>
         </div>
       </div>
