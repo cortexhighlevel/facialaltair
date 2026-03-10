@@ -124,8 +124,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="flex items-center justify-between"
           >
             <img src={logo} alt="Dr. Altair Menosso" className="h-7 md:h-10 w-auto" />
+            <HamburgerMenu />
           </motion.div>
 
           {/* Spacer */}
