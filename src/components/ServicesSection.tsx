@@ -1,7 +1,4 @@
-import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight } from "lucide-react";
 
 import serviceHarmonizacao from "@/assets/service-harmonizacao.jpg";
@@ -9,8 +6,6 @@ import servicePreenchimento from "@/assets/service-preenchimento.jpg";
 import serviceBotox from "@/assets/service-botox.jpg";
 import serviceRinomodelacao from "@/assets/service-rinomodelacao.jpg";
 import serviceBioestimuladores from "@/assets/service-bioestimuladores.jpg";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
@@ -51,34 +46,8 @@ const services = [
 ];
 
 const ServicesSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const ctx = gsap.context(() => {
-      // Pin each card as it reaches the top
-      cardsRef.current.forEach((card, i) => {
-        if (!card) return;
-
-        ScrollTrigger.create({
-          trigger: card,
-          start: "top 80px",
-          end: i < services.length - 1 ? "bottom 80px" : "bottom bottom",
-          pin: i < services.length - 1,
-          pinSpacing: false,
-          id: `card-${i}`,
-        });
-      });
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} id="servicos" className="relative bg-background">
+    <section id="servicos" className="relative bg-background">
       {/* Section header */}
       <div className="px-6 md:px-16 lg:px-24 pt-24 pb-16">
         <motion.div
@@ -101,18 +70,21 @@ const ServicesSection = () => {
         </motion.div>
       </div>
 
-      {/* Stacked pinned cards */}
+      {/* Stacked sticky cards */}
       <div className="relative">
         {services.map((service, i) => (
           <div
             key={service.number}
-            ref={(el) => {
-              cardsRef.current[i] = el;
-            }}
-            className="relative w-full min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 py-8"
+            className="sticky top-0 w-full min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 py-8"
             style={{ zIndex: i + 1 }}
           >
-            <div className="relative w-full max-w-6xl rounded-3xl overflow-hidden shadow-2xl bg-card">
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="relative w-full max-w-6xl rounded-3xl overflow-hidden shadow-2xl bg-card"
+            >
               <div className="grid md:grid-cols-2 min-h-[70vh]">
                 {/* Image side */}
                 <div className="relative overflow-hidden h-64 md:h-auto">
@@ -145,13 +117,13 @@ const ServicesSection = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>
 
       {/* CTA */}
-      <div className="flex flex-col justify-center items-center px-6 py-24 text-center">
+      <div className="relative flex flex-col justify-center items-center px-6 py-24 text-center" style={{ zIndex: services.length + 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
