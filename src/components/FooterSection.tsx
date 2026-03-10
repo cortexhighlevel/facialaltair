@@ -135,7 +135,7 @@ const FooterSection = () => {
       {/* Bottom Bar */}
       <div className="border-t border-primary-foreground/10">
         <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-primary-foreground/40">
-          <p>© Altair Menosso 2024. Todos os direitos reservados.</p>
+          <p>© Altair Menosso {new Date().getFullYear()}. Todos os direitos reservados.</p>
           <p>
             Desenvolvido por{" "}
             <a
