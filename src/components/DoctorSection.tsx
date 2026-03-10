@@ -44,21 +44,12 @@ const DoctorSection = () => {
               style={{ objectPosition: "center 20%" }}
             />
 
-            {/* Gradient fade at top */}
-            <div
-              className="absolute top-0 left-0 right-0 h-24 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(to bottom, hsl(214 84% 20%) 0%, transparent 100%)",
-              }}
-            />
-
             {/* Gradient fade at bottom on mobile */}
             <div
-              className="absolute bottom-0 left-0 right-0 h-56 lg:hidden pointer-events-none"
+              className="absolute bottom-0 left-0 right-0 h-72 lg:hidden pointer-events-none"
               style={{
                 background:
-                  "linear-gradient(to top, hsl(214 84% 20%) 0%, hsl(214 84% 20%) 15%, hsl(214 84% 20% / 0.8) 40%, hsl(214 84% 20% / 0.4) 65%, transparent 100%)",
+                  "linear-gradient(to top, hsl(214 84% 20%) 0%, hsl(214 84% 20%) 25%, hsl(214 84% 20% / 0.9) 45%, hsl(214 84% 20% / 0.5) 70%, transparent 100%)",
               }}
             />
           </motion.div>
