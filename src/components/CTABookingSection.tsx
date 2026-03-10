@@ -152,7 +152,7 @@ Agende sua Consulta
                 <label className="block text-muted-foreground text-[11px] font-medium tracking-wider uppercase mb-2">
                   Procedimento de Interesse
                 </label>
-                <div className="flex flex-wrap gap-2">
+                <div className="grid grid-cols-2 gap-2">
                   {services.map((s) => (
                     <button
                       key={s}
