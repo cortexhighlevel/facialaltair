@@ -149,7 +149,7 @@ const CTABookingSection = () => {
 
               {/* Procedimento — chips */}
               <div>
-                <label className="block text-background/40 text-[11px] font-medium tracking-wider uppercase mb-2">
+                <label className="block text-muted-foreground text-[11px] font-medium tracking-wider uppercase mb-2">
                   Procedimento de Interesse
                 </label>
                 <div className="flex flex-wrap gap-2">
