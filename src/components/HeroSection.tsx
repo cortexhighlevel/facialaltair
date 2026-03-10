@@ -161,7 +161,7 @@ const HeroSection = () => {
                   <span className="block text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
                     Harmonização
                   </span>
-                  <span className="block text-4xl sm:text-5xl md:text-7xl lg:text-8xl italic font-medium text-accent">
+                  <span className="block text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium text-accent">
                     Facial
                   </span>
                 </h1>
