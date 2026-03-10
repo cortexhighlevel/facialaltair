@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Syringe, ShieldCheck, Smile, Heart, Star, Users, Phone } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import aboutImg from "@/assets/about-clinic.jpg";
 
 const features = [
-  { icon: Sparkles, label: "Técnicas Avançadas" },
-  { icon: Users, label: "Profissionais Especializados" },
-  { icon: Smile, label: "Resultados Naturais e Personalizados" },
-  { icon: Star, label: "Produtos de Alta Qualidade" },
-  { icon: ShieldCheck, label: "Ambiente Seguro e Confortável" },
-  { icon: Heart, label: "Acompanhamento Personalizado" },
-  { icon: Users, label: "Atendimento Humanizado" },
+  "Técnicas Avançadas",
+  "Profissionais Especializados",
+  "Resultados Naturais e Personalizados",
+  "Produtos de Alta Qualidade",
+  "Ambiente Seguro e Confortável",
+  "Acompanhamento Personalizado",
+  "Atendimento Humanizado",
 ];
 
 const AboutSection = () => {
