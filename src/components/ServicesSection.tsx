@@ -14,61 +14,63 @@ gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    title: "Harmonização Facial",
-    description: "Procedimentos personalizados para realçar a beleza natural do seu rosto com equilíbrio e proporção.",
-    image: serviceHarmonizacao,
+    title: "Toxina Botulínica",
+    description:
+      "A toxina botulínica é usada para suavizar rugas e linhas de expressão. O procedimento é rápido, seguro, e os resultados começam a aparecer em 3 dias. Pode ser feito em diversas áreas do rosto, de acordo com sua necessidade avaliada juntamente com o médico.",
+    image: serviceBotox,
     number: "01",
   },
   {
-    title: "Preenchimento Labial",
-    description: "Volume e definição natural para lábios mais harmoniosos e expressivos.",
+    title: "Preenchedores Faciais",
+    description:
+      "Os preenchedores faciais são substâncias injetáveis à base de ácido hialurônico, usadas para suavizar linhas, adicionar volume, contornar e hidratar o rosto. Resultados imediatos e duradouros.",
     image: servicePreenchimento,
     number: "02",
   },
   {
-    title: "Toxina Botulínica",
-    description: "Suavização de linhas de expressão com técnica precisa para um resultado jovem e natural.",
-    image: serviceBotox,
+    title: "Fios de PDO",
+    description:
+      "Os fios de PDO são utilizados para lifting e rejuvenescimento facial. Estimulam a produção de colágeno, suavizam rugas e redefinem contornos faciais. Minimamente invasivo, com resultados progressivos.",
+    image: serviceHarmonizacao,
     number: "03",
   },
   {
-    title: "Rinomodelação",
-    description: "Remodelação do nariz sem cirurgia, com resultados imediatos e harmônicos.",
-    image: serviceRinomodelacao,
+    title: "Bioestimulador de Colágeno",
+    description:
+      "Tratamento que utiliza substâncias injetáveis para estimular a produção natural de colágeno, melhorando firmeza e elasticidade da pele de forma gradual e duradoura.",
+    image: serviceBioestimuladores,
     number: "04",
   },
   {
-    title: "Bioestimuladores",
-    description: "Estímulo natural da produção de colágeno para uma pele mais firme e rejuvenescida.",
-    image: serviceBioestimuladores,
+    title: "Ultrassom Micro e Macro Focado",
+    description:
+      "Tecnologia avançada que utiliza ondas de ultrassom para penetrar nas camadas profundas da pele, promovendo produção de colágeno e rejuvenescimento. Não invasivo, sem recuperação prolongada.",
+    image: serviceRinomodelacao,
     number: "05",
   },
 ];
 
 const ServicesSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const section = sectionRef.current;
-    const track = trackRef.current;
-    if (!section || !track) return;
-
-    const totalScroll = track.scrollWidth - window.innerWidth;
+    if (!section) return;
 
     const ctx = gsap.context(() => {
-      gsap.to(track, {
-        x: -totalScroll,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${totalScroll}`,
-          scrub: 1,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
+      // Pin each card as it reaches the top
+      cardsRef.current.forEach((card, i) => {
+        if (!card) return;
+
+        ScrollTrigger.create({
+          trigger: card,
+          start: "top 80px",
+          end: i < services.length - 1 ? "bottom 80px" : "bottom bottom",
+          pin: i < services.length - 1,
+          pinSpacing: false,
+          id: `card-${i}`,
+        });
       });
     }, section);
 
@@ -76,103 +78,98 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      id="servicos"
-      className="relative overflow-hidden"
-    >
-      {/* Scrolling track */}
-      <div
-        ref={trackRef}
-        className="flex h-screen will-change-transform"
-      >
-        {/* First panel — Title */}
-        <div className="flex-shrink-0 w-screen h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="text-accent text-sm md:text-base font-semibold tracking-widest uppercase mb-4">
-              Nossos Serviços
-            </p>
-            <h2 className="text-foreground text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] tracking-tight max-w-3xl">
-              Procedimentos{" "}
-              <span className="text-accent">que transformam</span>
-            </h2>
-            <p className="text-muted-foreground text-base md:text-lg mt-6 max-w-xl leading-relaxed">
-              Conheça os tratamentos que oferecemos com técnicas modernas e resultados naturais.
-            </p>
-            <div className="flex items-center gap-3 mt-8 text-muted-foreground text-sm">
-              <span className="w-12 h-px bg-accent" />
-              Deslize para explorar
-              <ArrowRight className="w-4 h-4 animate-pulse" />
-            </div>
-          </motion.div>
-        </div>
+    <section ref={sectionRef} id="servicos" className="relative bg-background">
+      {/* Section header */}
+      <div className="px-6 md:px-16 lg:px-24 pt-24 pb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <p className="text-accent text-sm md:text-base font-semibold tracking-widest uppercase mb-4">
+            Nossos Serviços
+          </p>
+          <h2 className="text-foreground text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[0.95] tracking-tight max-w-3xl">
+            Procedimentos{" "}
+            <span className="text-accent">que transformam</span>
+          </h2>
+          <p className="text-muted-foreground text-base md:text-lg mt-6 max-w-xl leading-relaxed">
+            Conheça os tratamentos que oferecemos com técnicas modernas e
+            resultados naturais.
+          </p>
+        </motion.div>
+      </div>
 
-        {/* Service panels */}
+      {/* Stacked pinned cards */}
+      <div className="relative">
         {services.map((service, i) => (
           <div
             key={service.number}
-            className="flex-shrink-0 w-screen h-screen flex items-center justify-center px-4 md:px-8"
+            ref={(el) => {
+              cardsRef.current[i] = el;
+            }}
+            className="relative w-full min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 py-8"
+            style={{ zIndex: i + 1 }}
           >
-            <div className="relative w-full max-w-5xl h-[75vh] rounded-3xl overflow-hidden group cursor-pointer">
-              {/* Image */}
-              <img
-                src={service.image}
-                alt={service.title}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+            <div className="relative w-full max-w-6xl rounded-3xl overflow-hidden shadow-2xl bg-card">
+              <div className="grid md:grid-cols-2 min-h-[70vh]">
+                {/* Image side */}
+                <div className="relative overflow-hidden h-64 md:h-auto">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent md:bg-gradient-to-r md:from-transparent md:to-black/10" />
+                  <span className="absolute top-4 left-4 md:top-6 md:left-8 text-white/20 text-7xl md:text-9xl font-semibold leading-none select-none">
+                    {service.number}
+                  </span>
+                </div>
 
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-              {/* Number */}
-              <span className="absolute top-6 right-8 text-white/20 text-8xl md:text-9xl font-semibold leading-none select-none">
-                {service.number}
-              </span>
-
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                <h3 className="text-white text-3xl md:text-5xl font-semibold leading-tight mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-white/70 text-sm md:text-base max-w-md leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                <button className="flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-sm">
-                  Saiba Mais
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
+                {/* Content side */}
+                <div className="flex flex-col justify-center p-8 md:p-12 lg:p-16">
+                  <span className="text-accent text-xs font-semibold tracking-widest uppercase mb-3">
+                    Procedimento {service.number}
+                  </span>
+                  <h3 className="text-foreground text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-6">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-8">
+                    {service.description}
+                  </p>
+                  <button className="self-start flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-sm">
+                    Saiba Mais
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         ))}
+      </div>
 
-        {/* Last panel — CTA */}
-        <div className="flex-shrink-0 w-screen h-screen flex flex-col justify-center items-center px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-2xl"
-          >
-            <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-4">
-              Portfólio [ {services.length}+ procedimentos ]
-            </p>
-            <h3 className="text-foreground text-3xl md:text-5xl font-semibold leading-tight mb-6">
-              Pronto para realçar sua beleza natural?
-            </h3>
-            <button className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-8 py-4 rounded-full hover:brightness-110 transition-all text-base">
-              Agende sua Consulta
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </motion.div>
-        </div>
+      {/* CTA */}
+      <div className="flex flex-col justify-center items-center px-6 py-24 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl"
+        >
+          <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-4">
+            Portfólio [ {services.length}+ procedimentos ]
+          </p>
+          <h3 className="text-foreground text-3xl md:text-5xl font-semibold leading-tight mb-6">
+            Pronto para realçar sua beleza natural?
+          </h3>
+          <button className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-8 py-4 rounded-full hover:brightness-110 transition-all text-base">
+            Agende sua Consulta
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </motion.div>
       </div>
     </section>
   );
