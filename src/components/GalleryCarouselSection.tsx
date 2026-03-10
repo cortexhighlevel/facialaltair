@@ -16,7 +16,7 @@ const allImages = [...images, ...images];
 
 const GalleryCarouselSection = () => {
   return (
-    <section className="py-12 md:py-16 overflow-hidden bg-muted/30">
+    <section className="py-12 md:py-16 overflow-hidden bg-foreground">
       <div className="relative">
         <motion.div
           className="flex gap-4 md:gap-6 w-max"
