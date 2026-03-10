@@ -1,44 +1,55 @@
 import { motion } from "framer-motion";
-import { Phone, GraduationCap, Award, Globe } from "lucide-react";
+import { Phone } from "lucide-react";
 import drImg from "@/assets/dr-altair-menosso.webp";
 
 const credentials = [
-  { icon: GraduationCap, label: "Universidade Federal do Paraná" },
-  { icon: Award, label: "Palestrante em Harvard" },
-  { icon: Globe, label: "Expo Dubai 2020" },
-  { icon: Award, label: "Hospital Albert Einstein" },
+  "Universidade Federal do Paraná",
+  "Palestrante em Harvard",
+  "Expo Dubai 2020",
+  "Hospital Albert Einstein",
+  "Congresso Mundial de Medicina Estética",
+  "Congresso Brasileiro de Medicina Estética",
 ];
 
 const DoctorSection = () => {
   return (
     <section id="doutor" className="py-6 md:py-10 px-3 md:px-6 lg:px-8">
-      <div className="border border-border rounded-[2rem] md:rounded-[3rem] bg-primary p-5 md:p-10 lg:p-14 overflow-hidden">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+      <div
+        className="rounded-[2rem] md:rounded-[3rem] overflow-hidden relative"
+        style={{ background: "hsl(214 84% 20%)" }}
+      >
+        {/* Subtle radial glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at 30% 50%, hsl(214 84% 30% / 0.4) 0%, transparent 70%)",
+          }}
+        />
+
+        <div className="relative z-10 flex flex-col lg:flex-row">
           {/* Left — Image */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="flex-1 relative"
+            className="lg:flex-1 relative flex items-end justify-center lg:justify-start"
           >
             <img
               src={drImg}
               alt="Dr. Altair Menosso - Especialista em Harmonização Facial"
-              className="w-full max-w-[500px] mx-auto h-auto object-cover rounded-2xl md:rounded-[2rem]"
+              className="w-full max-w-[420px] lg:max-w-none lg:w-full h-[500px] md:h-[650px] lg:h-[700px] object-cover object-top lg:rounded-none"
             />
-            {/* Floating card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute bottom-4 left-4 right-4 md:right-auto md:left-6 md:bottom-6 bg-background rounded-xl p-4 shadow-lg max-w-[320px]"
-            >
-              <p className="text-foreground text-sm font-medium leading-snug">
-                Palestrante em Harvard, uma das instituições acadêmicas mais prestigiadas do mundo
-              </p>
-            </motion.div>
+
+            {/* Gradient fade at bottom on mobile */}
+            <div
+              className="absolute bottom-0 left-0 right-0 h-32 lg:hidden pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to top, hsl(214 84% 20%) 0%, transparent 100%)",
+              }}
+            />
           </motion.div>
 
           {/* Right — Content */}
@@ -47,37 +58,49 @@ const DoctorSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="flex-1 flex flex-col gap-6"
+            className="lg:flex-1 flex flex-col gap-5 md:gap-6 p-6 md:p-10 lg:p-14 lg:justify-center"
           >
-            <span className="text-accent text-sm font-semibold tracking-widest uppercase">
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-accent text-xs font-bold tracking-[0.25em] uppercase"
+            >
               Quem Somos
-            </span>
+            </motion.span>
 
-            <h2 className="text-primary-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] tracking-tight">
-              Dr. Altair Menosso
+            <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-semibold leading-[1.05] tracking-tight" style={{ color: "hsl(0 0% 100%)" }}>
+              Dr. Altair{" "}
+              <span className="text-accent">Menosso</span>
             </h2>
 
-            <p className="text-primary-foreground/70 text-base md:text-lg leading-relaxed">
-              Dr. Altair Menosso é médico formado pela Universidade Federal do Paraná. Sua trajetória acadêmica e profissional é enriquecida por sua participação em uma série de eventos internacionais de prestígio. Ele teve o privilégio de ministrar palestras em congressos renomados, como o Congresso Mundial de Medicina Estética e o Congresso Brasileiro de Medicina Estética, além de prestigiosos locais como o Hospital Albert Einstein e Universidade de Harvard.
+            <p className="text-sm md:text-base leading-relaxed max-w-[540px]" style={{ color: "hsl(214 30% 75%)" }}>
+              Dr. Altair Menosso é médico formado pela Universidade Federal do Paraná. Sua trajetória acadêmica e profissional é enriquecida por participações em eventos internacionais de prestígio, ministrando palestras em congressos renomados como o Congresso Mundial de Medicina Estética, Hospital Albert Einstein e a Universidade de Harvard.
             </p>
 
-            <p className="text-primary-foreground/70 text-base md:text-lg leading-relaxed">
+            <p className="text-sm md:text-base leading-relaxed max-w-[540px]" style={{ color: "hsl(214 30% 75%)" }}>
               Também esteve presente na Expo Dubai 2020, ampliando ainda mais sua influência no campo da Medicina Estética.
             </p>
 
-            {/* Credentials */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
-              {credentials.map((cred, i) => (
+            {/* Credential tags */}
+            <div className="flex flex-wrap gap-2 mt-1">
+              {credentials.map((label, i) => (
                 <motion.div
-                  key={cred.label}
+                  key={label}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
-                  className="flex items-center gap-3 bg-primary-foreground/10 border border-primary-foreground/10 rounded-xl px-4 py-3"
+                  transition={{ duration: 0.4, delay: 0.3 + i * 0.06 }}
+                  className="flex items-center gap-2 rounded-full px-4 py-2 text-xs md:text-sm font-medium border"
+                  style={{
+                    background: "hsl(214 84% 25% / 0.5)",
+                    borderColor: "hsl(214 60% 40% / 0.3)",
+                    color: "hsl(0 0% 95%)",
+                  }}
                 >
-                  <cred.icon className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="text-primary-foreground text-sm font-medium">{cred.label}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                  {label}
                 </motion.div>
               ))}
             </div>
@@ -94,6 +117,19 @@ const DoctorSection = () => {
             </a>
           </motion.div>
         </div>
+
+        {/* Floating Harvard card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20 bg-background/95 backdrop-blur-sm rounded-xl p-4 shadow-2xl max-w-[280px] hidden lg:block"
+        >
+          <p className="text-foreground text-sm font-medium leading-snug">
+            Palestrante em <span className="text-accent font-bold">Harvard</span>, uma das instituições acadêmicas mais prestigiadas do mundo
+          </p>
+        </motion.div>
       </div>
     </section>
   );
