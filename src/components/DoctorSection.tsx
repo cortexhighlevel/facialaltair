@@ -49,7 +49,7 @@ const DoctorSection = () => {
               className="absolute bottom-0 left-0 right-0 h-56 lg:hidden pointer-events-none"
               style={{
                 background:
-                  "linear-gradient(to top, hsl(214 84% 20%) 0%, transparent 100%)",
+                  "linear-gradient(to top, hsl(214 84% 20%) 0%, hsl(214 84% 20%) 15%, hsl(214 84% 20% / 0.8) 40%, hsl(214 84% 20% / 0.4) 65%, transparent 100%)",
               }}
             />
           </motion.div>
