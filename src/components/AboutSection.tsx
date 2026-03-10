@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import aboutImg from "@/assets/about-clinic.jpg";
 
+
 const features = [
   "Técnicas Avançadas",
   "Profissionais Especializados",
