@@ -118,7 +118,7 @@ const CTABookingSection = () => {
 
               {/* Nome */}
               <div>
-                <label className="block text-background/40 text-[11px] font-medium tracking-wider uppercase mb-1.5">
+                <label className="block text-muted-foreground text-[11px] font-medium tracking-wider uppercase mb-1.5">
                   Nome completo
                 </label>
                 <input
@@ -128,7 +128,7 @@ const CTABookingSection = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Seu nome"
-                  className="w-full rounded-xl border border-background/10 bg-background/5 px-4 py-3 text-sm text-background placeholder:text-background/25 outline-none focus:border-accent/50 transition-colors"
+                  className="w-full rounded-xl border border-border bg-secondary px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 outline-none focus:border-accent transition-colors"
                 />
               </div>
 
