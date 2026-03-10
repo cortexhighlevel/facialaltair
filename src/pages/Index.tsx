@@ -20,6 +20,7 @@ const Index = () => {
       <BeforeAfterSection />
       <TestimonialsSection />
       <FAQSection />
+      <GalleryCarouselSection />
       <CTABookingSection />
     </div>
   );
