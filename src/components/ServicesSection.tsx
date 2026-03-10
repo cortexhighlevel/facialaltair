@@ -123,7 +123,8 @@ const ServicesSection = () => {
       </div>
 
       {/* CTA */}
-      <div className="relative flex flex-col justify-center items-center px-6 py-12 md:py-24 text-center bg-background" style={{ zIndex: services.length + 1 }}>
+      <div className="relative flex flex-col justify-center items-center px-6 pt-20 pb-12 md:pt-32 md:pb-24 text-center bg-background" style={{ zIndex: services.length + 1 }}>
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-background -translate-y-full pointer-events-none" style={{ zIndex: services.length + 1 }} />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
