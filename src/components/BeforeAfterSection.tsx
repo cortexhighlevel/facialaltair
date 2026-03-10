@@ -14,9 +14,14 @@ const cases: CaseData[] = [
     label: "Harmonização Facial",
   },
   {
+    before: "/before-after/case2-before.jpg",
+    after: "/before-after/case2-after.jpg",
+    label: "Rejuvenescimento",
+  },
+  {
     before: "/before-after/case3-before.jpg",
     after: "/before-after/case3-after.jpg",
-    label: "Rejuvenescimento",
+    label: "Preenchimento Labial",
   },
   {
     before: "/before-after/case4-before.jpg",
