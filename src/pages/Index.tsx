@@ -20,6 +20,7 @@ const SectionFallback = () => (
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <ExitIntentPopup />
       <HeroSection />
       <Suspense fallback={<SectionFallback />}>
         <AboutSection />
