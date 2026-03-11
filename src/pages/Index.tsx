@@ -1,29 +1,55 @@
+import { lazy, Suspense } from "react";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import ServicesSection from "@/components/ServicesSection";
-import DoctorSection from "@/components/DoctorSection";
-import BentoGridSection from "@/components/BentoGridSection";
-import BeforeAfterSection from "@/components/BeforeAfterSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import FAQSection from "@/components/FAQSection";
-import GalleryCarouselSection from "@/components/GalleryCarouselSection";
-import CTABookingSection from "@/components/CTABookingSection";
-import FooterSection from "@/components/FooterSection";
+
+const AboutSection = lazy(() => import("@/components/AboutSection"));
+const ServicesSection = lazy(() => import("@/components/ServicesSection"));
+const DoctorSection = lazy(() => import("@/components/DoctorSection"));
+const BentoGridSection = lazy(() => import("@/components/BentoGridSection"));
+const BeforeAfterSection = lazy(() => import("@/components/BeforeAfterSection"));
+const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
+const FAQSection = lazy(() => import("@/components/FAQSection"));
+const GalleryCarouselSection = lazy(() => import("@/components/GalleryCarouselSection"));
+const CTABookingSection = lazy(() => import("@/components/CTABookingSection"));
+const FooterSection = lazy(() => import("@/components/FooterSection"));
+
+const SectionFallback = () => (
+  <div className="min-h-[40vh]" />
+);
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <DoctorSection />
-      <BentoGridSection />
-      <BeforeAfterSection />
-      <TestimonialsSection />
-      <FAQSection />
-      <GalleryCarouselSection />
-      <CTABookingSection />
-      <FooterSection />
+      <Suspense fallback={<SectionFallback />}>
+        <AboutSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <ServicesSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <DoctorSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <BentoGridSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <BeforeAfterSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <TestimonialsSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <FAQSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <GalleryCarouselSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <CTABookingSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <FooterSection />
+      </Suspense>
     </div>
   );
 };
