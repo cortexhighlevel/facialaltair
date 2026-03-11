@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import HeroSection from "@/components/HeroSection";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const AboutSection = lazy(() => import("@/components/AboutSection"));
 const ServicesSection = lazy(() => import("@/components/ServicesSection"));
@@ -19,6 +20,7 @@ const SectionFallback = () => (
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <ExitIntentPopup />
       <HeroSection />
       <Suspense fallback={<SectionFallback />}>
         <AboutSection />
