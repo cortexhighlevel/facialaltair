@@ -66,14 +66,6 @@ const ExitIntentPopup = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-md rounded-2xl sm:rounded-3xl border-accent/30 bg-card p-5 sm:p-8 text-center gap-4 sm:gap-6">
-        <button
-          onClick={() => setOpen(false)}
-          className="absolute right-3 top-3 sm:right-4 sm:top-4 rounded-full p-2 text-muted-foreground hover:text-foreground hover:bg-accent/10 transition-colors"
-          aria-label="Fechar"
-        >
-          <X className="w-5 h-5" />
-        </button>
-        
         <div className="flex flex-col items-center gap-3 sm:gap-4">
           <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-accent/20 flex items-center justify-center">
             <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-accent" />
