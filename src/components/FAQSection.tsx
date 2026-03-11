@@ -53,7 +53,8 @@ const FAQSection = () => {
             <div className="rounded-2xl overflow-hidden">
               <img
                 src={drAltairFaq}
-                alt="Dr. Altair Menosso"
+                alt="Dr. Altair Menosso respondendo dúvidas sobre harmonização facial"
+                loading="lazy"
                 className="w-full h-auto object-cover object-top rounded-2xl"
               />
             </div>

@@ -153,6 +153,7 @@ const BentoGridSection = () => {
                 <img
                   src={drImg}
                   alt="Dr. Altair Menosso"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "center 15%" }}
                 />
