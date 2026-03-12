@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
-import drImg from "@/assets/dr-altair-menosso.webp";
+import drImg from "@/assets/dr-altair-menosso-new.jpg";
 import assinaturaImg from "@/assets/assinatura-dr-altair.png";
 
 const credentials = [
