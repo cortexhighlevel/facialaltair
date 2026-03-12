@@ -259,17 +259,17 @@ const TestimonialsSection = () => {
               ) : (
                 /* Desktop: Grid layout */
                 <>
-                  <div className="grid lg:grid-cols-3 gap-4 md:gap-5">
+                  <div className="grid lg:grid-cols-3 gap-4 md:gap-5 items-stretch">
                     {reviews.slice(0, 3).map((review, i) => (
-                      <motion.div key={review.name} {...fadeIn(0.1 + i * 0.15)}>
+                      <motion.div key={review.name} {...fadeIn(0.1 + i * 0.15)} className="h-full">
                         <ReviewCard review={review} featured accent={i === 1} />
                       </motion.div>
                     ))}
                   </div>
                   <motion.div {...fadeIn(0.5)} className="mt-5">
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
                       {reviews.slice(3).map((review) => (
-                        <div key={review.name}>
+                        <div key={review.name} className="h-full">
                           <ReviewCard review={review} />
                         </div>
                       ))}
