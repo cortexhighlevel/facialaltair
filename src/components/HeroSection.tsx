@@ -106,9 +106,8 @@ const HeroSection = () => {
   }, [animate, drawFrame]);
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "150vh" }}>
-      {/* Sticky wrapper */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
+    <div ref={containerRef} className="relative h-screen w-full overflow-hidden">
+        {/* Canvas Background */}
         {/* Canvas Background */}
         <canvas
           ref={canvasRef}
