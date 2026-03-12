@@ -114,7 +114,7 @@ const FooterSection = () => {
               </a>
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/dr.altairmenosso/"
+                href="https://www.instagram.com/draltairmenosso/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
