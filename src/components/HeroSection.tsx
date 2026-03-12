@@ -169,7 +169,7 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Spacer - pushes content up on mobile, less on desktop */}
-          <div className="flex-[0.65] md:flex-[0.85]" />
+          <div className="flex-[0.65] md:flex-[0.7]" />
 
           {/* Bottom Content */}
           <div className="flex flex-col gap-4 md:gap-8">
