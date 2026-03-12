@@ -176,7 +176,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-between"
           >
-            <img src={logo} alt="Dr. Altair Menosso" className="h-7 md:h-10 w-auto" />
+            <img src={logo} alt="Dr. Altair Menosso" className="h-7 md:h-10 w-auto" fetchPriority="high" decoding="async" />
             <HamburgerMenu />
           </motion.div>
 

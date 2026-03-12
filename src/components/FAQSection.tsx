@@ -55,6 +55,7 @@ const FAQSection = () => {
                 src={drAltairFaq}
                 alt="Dr. Altair Menosso respondendo dúvidas sobre harmonização facial"
                 loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-cover object-top rounded-2xl"
               />
             </div>

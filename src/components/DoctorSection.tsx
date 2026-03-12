@@ -123,6 +123,8 @@ const DoctorSection = () => {
               <img
                 src={assinaturaImg}
                 alt="Assinatura Dr. Altair Menosso"
+                loading="lazy"
+                decoding="async"
                 className="h-20 md:h-28 w-auto brightness-0 invert"
               />
             </div>
