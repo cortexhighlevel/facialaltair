@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
-import aboutImg from "@/assets/about-clinic.jpg";
+import aboutImg from "@/assets/about-clinic-new.jpg";
 import GlassButton from "@/components/GlassButton";
 
 
@@ -40,12 +40,15 @@ const AboutSection = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="flex-1"
           >
-            <img
-              src={aboutImg}
-              alt="Clínica de harmonização facial do Dr. Altair Menosso"
-              loading="lazy"
-              className="w-full h-[300px] md:h-[520px] object-cover rounded-2xl md:rounded-[2rem]"
-            />
+            <div className="relative overflow-hidden rounded-2xl md:rounded-[2rem]">
+              <img
+                src={aboutImg}
+                alt="Clínica de harmonização facial do Dr. Altair Menosso"
+                loading="lazy"
+                className="w-full h-[300px] md:h-[520px] object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent" />
+            </div>
           </motion.div>
 
           {/* Right — Text + Features */}
