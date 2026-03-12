@@ -120,7 +120,7 @@ const fadeIn = (delay = 0) => ({
 
 const TestimonialsSection = () => {
   // Estado para controlar "Ver mais" no mobile
-  const [showAll, setShowAll] = React.useState(false);
+  const [showAll, setShowAll] = useState(false);
   const featured = reviews.slice(0, 3);
   const rest = reviews.slice(3);
 
