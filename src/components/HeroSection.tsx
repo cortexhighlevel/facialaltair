@@ -168,8 +168,8 @@ const HeroSection = () => {
             <HamburgerMenu />
           </motion.div>
 
-          {/* Spacer */}
-          <div className="flex-1" />
+          {/* Spacer - reduced to push content up */}
+          <div className="flex-[0.65]" />
 
           {/* Bottom Content */}
           <div className="flex flex-col gap-4 md:gap-8">
