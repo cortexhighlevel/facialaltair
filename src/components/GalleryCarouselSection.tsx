@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
 
 const images = [
-  { src: "/before-after/case1-before.jpg", alt: "Caso 1" },
-  { src: "/before-after/case1-after.jpg", alt: "Caso 1 resultado" },
-  { src: "/before-after/case2-before.jpg", alt: "Caso 2" },
-  { src: "/before-after/case2-after.jpg", alt: "Caso 2 resultado" },
-  { src: "/before-after/case3-before.jpg", alt: "Caso 3" },
-  { src: "/before-after/case3-after.jpg", alt: "Caso 3 resultado" },
-  { src: "/before-after/case4-before.jpg", alt: "Caso 4" },
-  { src: "/before-after/case4-after.jpg", alt: "Caso 4 resultado" },
+  { src: "/before-after/carousel-01.jpg", alt: "Caso 1" },
+  { src: "/before-after/carousel-02.jpg", alt: "Caso 2" },
+  { src: "/before-after/carousel-03.jpg", alt: "Caso 3" },
+  { src: "/before-after/carousel-04.jpg", alt: "Caso 4" },
+  { src: "/before-after/carousel-05.jpg", alt: "Caso 5" },
+  { src: "/before-after/carousel-06.jpg", alt: "Caso 6" },
+  { src: "/before-after/carousel-07.jpg", alt: "Caso 7" },
+  { src: "/before-after/carousel-08.jpg", alt: "Caso 8" },
+  { src: "/before-after/carousel-09.jpg", alt: "Caso 9" },
 ];
 
 // Duplicate for seamless loop
