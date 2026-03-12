@@ -135,11 +135,11 @@ const TestimonialsSection = () => {
   // Render a single review card
   const ReviewCard = ({ review, featured = false, accent = false }: { review: Review; featured?: boolean; accent?: boolean }) => (
     <article
-      className={`rounded-2xl p-6 md:p-8 flex flex-col justify-between transition-all duration-500 ${
+      className={`h-full rounded-2xl p-6 md:p-8 flex flex-col transition-all duration-500 ${
         accent
           ? "ring-1 ring-accent/30 bg-accent/5 hover:-translate-y-1"
           : "ring-1 ring-border bg-card"
-      } ${featured ? "min-h-[280px]" : ""}`}
+      }`}
     >
       <div className="flex items-start justify-between mb-4">
         <span
