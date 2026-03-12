@@ -145,7 +145,7 @@ const HeroSection = () => {
 
   return (
     <div ref={containerRef} className="relative" style={{ height: "135vh" }}>
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
+      <div className="sticky top-0 w-full overflow-hidden" style={{ height: '100svh' }}>
         <canvas
           ref={canvasRef}
           className="absolute top-0 left-0 w-full h-full"
