@@ -59,7 +59,7 @@ const FAQSection = () => {
               />
             </div>
             {/* Stats badge */}
-            <div className="absolute bottom-6 right-6 rounded-2xl p-5 flex flex-col items-center gap-1 shadow-lg" style={{ backgroundColor: 'hsl(214, 84%, 20%)' }}>
+            <div className="absolute bottom-6 left-6 rounded-2xl p-5 flex flex-col items-center gap-1 shadow-lg" style={{ backgroundColor: 'hsl(214, 84%, 20%)' }}>
               <svg className="w-8 h-8 mb-1" viewBox="0 0 24 24" fill="none" stroke="hsl(45, 90%, 42%)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3" />
                 <path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4" />
