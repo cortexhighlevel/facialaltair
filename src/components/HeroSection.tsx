@@ -117,8 +117,7 @@ const HeroSection = () => {
     const trigger = ScrollTrigger.create({
       trigger: containerRef.current,
       start: "top top",
-      end: "+=110%",
-      pin: true,
+      end: "bottom bottom",
       scrub: 0.2,
       onUpdate: (self) => {
         targetFrameRef.current = self.progress * (FRAME_COUNT - 1);
