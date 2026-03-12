@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import drImg from "@/assets/dr-altair-menosso.webp";
-import serviceHarmonizacao from "@/assets/service-harmonizacao.jpg";
+import serviceHarmonizacao from "@/assets/service-harmonizacao-new.jpg";
 import iconBeleza from "@/assets/icon-beleza-natural.png";
 import iconRejuvenescimento from "@/assets/icon-rejuvenescimento.png";
 import iconAutoestima from "@/assets/icon-autoestima.png";
