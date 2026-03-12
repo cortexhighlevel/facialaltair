@@ -5,8 +5,8 @@ import logo from "@/assets/logo-dr-altair-menosso.png";
 const menuItems = [
   { label: "Início", href: "#inicio", number: "01" },
   { label: "Sobre", href: "#sobre", number: "02" },
-  { label: "Procedimentos", href: "#procedimentos", number: "03" },
-  { label: "Resultados", href: "#resultados", number: "04" },
+  { label: "Procedimentos", href: "#servicos", number: "03" },
+  { label: "Resultados", href: "#antes-depois", number: "04" },
   { label: "Depoimentos", href: "#depoimentos", number: "05" },
   { label: "Contato", href: "#contato", number: "06" },
 ];
