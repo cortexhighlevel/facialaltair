@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FRAME_COUNT = 70;
+const FRAME_COUNT = 25;
 
 const getFramePath = (index: number): string => {
   const padded = String(index + 1).padStart(4, "0");
