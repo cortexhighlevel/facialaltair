@@ -226,13 +226,13 @@ const TestimonialsSection = () => {
                 <div className="relative">
                   <div
                     ref={scrollRef}
-                    className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-2 px-2"
+                    className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4"
                     style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
                   >
                     {reviews.map((review, i) => (
                       <div
                         key={review.name}
-                        className="flex-shrink-0 w-[85%] snap-center"
+                        className="flex-shrink-0 w-[92%] snap-start"
                       >
                         <ReviewCard review={review} featured accent={i === 1} />
                       </div>
