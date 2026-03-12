@@ -108,7 +108,6 @@ const HeroSection = () => {
   return (
     <div ref={containerRef} className="relative h-screen w-full overflow-hidden">
         {/* Canvas Background */}
-        {/* Canvas Background */}
         <canvas
           ref={canvasRef}
           className="absolute top-0 left-0 w-full h-full"
