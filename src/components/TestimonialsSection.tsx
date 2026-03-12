@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import testimonialsBg from "@/assets/testimonials-bg.jpg";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface Review {
   name: string;
