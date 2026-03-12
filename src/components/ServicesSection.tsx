@@ -6,6 +6,7 @@ import servicePreenchimento from "@/assets/service-preenchimento-new.jpg";
 import serviceBotox from "@/assets/service-botox-new.jpg";
 import serviceRinomodelacao from "@/assets/service-rinomodelacao.jpg";
 import serviceBioestimuladores from "@/assets/service-bioestimuladores.jpg";
+import serviceFiosPdo from "@/assets/service-fios-pdo.jpg";
 
 const services = [
   {
@@ -26,7 +27,7 @@ const services = [
     title: "Fios de PDO",
     description:
       "Os fios de PDO são utilizados para lifting e rejuvenescimento facial. Estimulam a produção de colágeno, suavizam rugas e redefinem contornos faciais. Minimamente invasivo, com resultados progressivos.",
-    image: serviceHarmonizacao,
+    image: serviceFiosPdo,
     number: "03",
   },
   {
