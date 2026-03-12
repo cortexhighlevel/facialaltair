@@ -117,8 +117,7 @@ const HeroSection = () => {
     const trigger = ScrollTrigger.create({
       trigger: containerRef.current,
       start: "top top",
-      end: "+=110%",
-      pin: true,
+      end: "bottom bottom",
       scrub: 0.2,
       onUpdate: (self) => {
         targetFrameRef.current = self.progress * (FRAME_COUNT - 1);
@@ -145,8 +144,8 @@ const HeroSection = () => {
   }, [drawFrame, resizeCanvas, startAnimationLoop]);
 
   return (
-    <div ref={containerRef} className="relative h-screen w-full overflow-hidden">
-        {/* Canvas Background */}
+    <div ref={containerRef} className="relative" style={{ height: "210vh" }}>
+      <div className="sticky top-0 h-screen w-full overflow-hidden">
         <canvas
           ref={canvasRef}
           className="absolute top-0 left-0 w-full h-full"
@@ -225,6 +224,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
+      </div>
     </div>
   );
 };
