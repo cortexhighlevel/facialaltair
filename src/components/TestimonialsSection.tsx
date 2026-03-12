@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import testimonialsBg from "@/assets/testimonials-bg.jpg";
@@ -118,7 +119,8 @@ const fadeIn = (delay = 0) => ({
 });
 
 const TestimonialsSection = () => {
-  // Show 3 featured reviews in the main cards, rest in a scrollable row
+  // Estado para controlar "Ver mais" no mobile
+  const [showAll, setShowAll] = useState(false);
   const featured = reviews.slice(0, 3);
   const rest = reviews.slice(3);
 
@@ -162,7 +164,7 @@ const TestimonialsSection = () => {
             </div>
           </motion.div>
 
-          {/* Featured Cards */}
+          {/* Featured Cards - Desktop / Mobile: 3 depoimentos */}
           <div className="rounded-2xl md:rounded-3xl border border-border bg-background/90 backdrop-blur-sm overflow-hidden relative z-10">
             <div className="p-6 md:p-8">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5">
@@ -242,8 +244,27 @@ const TestimonialsSection = () => {
                 ))}
               </div>
 
-              {/* Additional reviews grid */}
-              <motion.div {...fadeIn(0.5)} className="mt-5">
+              {/* Botão Ver Mais - Mobile only */}
+              {!showAll && rest.length > 0 && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-6 flex justify-center lg:hidden"
+                >
+                  <button
+                    onClick={() => setShowAll(true)}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground font-medium text-sm hover:bg-accent/90 transition-colors"
+                  >
+                    Ver mais depoimentos
+                  </button>
+                </motion.div>
+              )}
+
+              {/* Additional reviews grid - Desktop sempre visível / Mobile apenas quando expandido */}
+              <motion.div 
+                {...fadeIn(0.5)} 
+                className={`mt-5 ${showAll ? 'block' : 'hidden lg:block'}`}
+              >
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {rest.map((review) => (
                     <article
