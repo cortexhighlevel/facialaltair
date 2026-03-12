@@ -85,12 +85,6 @@ const BentoGridSection = () => {
                   DESTAQUE
                 </span>
               </div>
-              <h3
-                className="text-2xl sm:text-3xl font-semibold tracking-tight"
-                style={{ color: "hsl(0 0% 100%)" }}
-              >
-                {benefits[0].title}
-              </h3>
               <p
                 className="mt-3 text-base sm:text-lg leading-relaxed max-w-lg"
                 style={{ color: "hsl(214 30% 75%)" }}
