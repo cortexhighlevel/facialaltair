@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
-import drImg from "@/assets/dr-altair-menosso.webp";
+import drImg from "@/assets/dr-altair-menosso-new.jpg";
 import assinaturaImg from "@/assets/assinatura-dr-altair.png";
 
 const credentials = [
@@ -42,7 +42,7 @@ const DoctorSection = () => {
               alt="Dr. Altair Menosso - Especialista em Harmonização Facial"
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover block"
-              style={{ objectPosition: "center 5%", maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 70%, transparent 100%)" }}
+              style={{ objectPosition: "center 20%", maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 70%, transparent 100%)" }}
             />
 
             {/* Gradient fade at bottom on mobile */}
