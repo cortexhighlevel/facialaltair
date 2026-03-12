@@ -157,7 +157,7 @@ const TestimonialsSection = () => {
         </div>
       </div>
       <p
-        className={`text-base sm:text-lg leading-relaxed flex-1 ${
+        className={`text-base sm:text-lg leading-relaxed flex-1 flex items-center ${
           accent ? "text-foreground" : "text-muted-foreground"
         }`}
       >
