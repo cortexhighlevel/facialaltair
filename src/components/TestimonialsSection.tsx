@@ -135,11 +135,11 @@ const TestimonialsSection = () => {
   // Render a single review card
   const ReviewCard = ({ review, featured = false, accent = false }: { review: Review; featured?: boolean; accent?: boolean }) => (
     <article
-      className={`rounded-2xl p-6 md:p-8 flex flex-col justify-between transition-all duration-500 ${
+      className={`h-full rounded-2xl p-6 md:p-8 flex flex-col transition-all duration-500 ${
         accent
           ? "ring-1 ring-accent/30 bg-accent/5 hover:-translate-y-1"
           : "ring-1 ring-border bg-card"
-      } ${featured ? "min-h-[280px]" : ""}`}
+      }`}
     >
       <div className="flex items-start justify-between mb-4">
         <span
@@ -157,7 +157,7 @@ const TestimonialsSection = () => {
         </div>
       </div>
       <p
-        className={`text-base sm:text-lg leading-relaxed flex-1 ${
+        className={`text-base sm:text-lg leading-relaxed flex-1 flex items-center ${
           accent ? "text-foreground" : "text-muted-foreground"
         }`}
       >
@@ -232,7 +232,7 @@ const TestimonialsSection = () => {
                     {reviews.map((review, i) => (
                       <div
                         key={review.name}
-                        className="flex-shrink-0 w-[92%] snap-start"
+                        className="flex-shrink-0 w-[92%] snap-start h-full"
                       >
                         <ReviewCard review={review} featured accent={i === 1} />
                       </div>
@@ -259,17 +259,17 @@ const TestimonialsSection = () => {
               ) : (
                 /* Desktop: Grid layout */
                 <>
-                  <div className="grid lg:grid-cols-3 gap-4 md:gap-5">
+                  <div className="grid lg:grid-cols-3 gap-4 md:gap-5 items-stretch">
                     {reviews.slice(0, 3).map((review, i) => (
-                      <motion.div key={review.name} {...fadeIn(0.1 + i * 0.15)}>
+                      <motion.div key={review.name} {...fadeIn(0.1 + i * 0.15)} className="h-full">
                         <ReviewCard review={review} featured accent={i === 1} />
                       </motion.div>
                     ))}
                   </div>
                   <motion.div {...fadeIn(0.5)} className="mt-5">
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
                       {reviews.slice(3).map((review) => (
-                        <div key={review.name}>
+                        <div key={review.name} className="h-full">
                           <ReviewCard review={review} />
                         </div>
                       ))}
