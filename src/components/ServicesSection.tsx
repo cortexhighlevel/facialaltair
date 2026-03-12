@@ -27,7 +27,7 @@ const services = [
     title: "Fios de PDO",
     description:
       "Os fios de PDO são utilizados para lifting e rejuvenescimento facial. Estimulam a produção de colágeno, suavizam rugas e redefinem contornos faciais. Minimamente invasivo, com resultados progressivos.",
-    image: serviceHarmonizacao,
+    image: serviceFiosPdo,
     number: "03",
   },
   {
