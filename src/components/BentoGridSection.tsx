@@ -75,6 +75,7 @@ const BentoGridSection = () => {
                 src={serviceHarmonizacao}
                 alt="Harmonização facial natural"
                 loading="lazy"
+                decoding="async"
                 className="aspect-video w-full object-cover"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[hsl(214_84%_20%)] via-[hsl(214_84%_20%/0.4)] to-transparent" />
