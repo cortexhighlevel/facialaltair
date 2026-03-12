@@ -144,8 +144,8 @@ const HeroSection = () => {
   }, [drawFrame, resizeCanvas, startAnimationLoop]);
 
   return (
-    <div ref={containerRef} className="relative h-screen w-full overflow-hidden">
-        {/* Canvas Background */}
+    <div ref={containerRef} className="relative" style={{ height: "210vh" }}>
+      <div className="sticky top-0 h-screen w-full overflow-hidden">
         <canvas
           ref={canvasRef}
           className="absolute top-0 left-0 w-full h-full"
