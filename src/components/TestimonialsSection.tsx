@@ -232,7 +232,7 @@ const TestimonialsSection = () => {
                     {reviews.map((review, i) => (
                       <div
                         key={review.name}
-                        className="flex-shrink-0 w-[92%] snap-start"
+                        className="flex-shrink-0 w-[92%] snap-start h-full"
                       >
                         <ReviewCard review={review} featured accent={i === 1} />
                       </div>
