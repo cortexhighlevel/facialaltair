@@ -45,6 +45,7 @@ const AboutSection = () => {
                 src={aboutImg}
                 alt="Clínica de harmonização facial do Dr. Altair Menosso"
                 loading="lazy"
+                decoding="async"
                 className="w-full h-[300px] md:h-[520px] object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent" />

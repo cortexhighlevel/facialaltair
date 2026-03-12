@@ -98,21 +98,33 @@ const HeroSection = () => {
   useEffect(() => {
     resizeCanvas();
 
-    const images: HTMLImageElement[] = [];
-    let loadedCount = 0;
+    const images: HTMLImageElement[] = new Array(FRAME_COUNT);
+    imagesRef.current = images;
 
-    for (let i = 0; i < FRAME_COUNT; i++) {
+    // Priority: load first 3 frames immediately for instant display
+    const priorityCount = 3;
+    let priorityLoaded = 0;
+
+    const loadFrame = (i: number) => {
       const img = new Image();
+      img.decoding = "async";
       img.src = getFramePath(i);
       img.onload = () => {
-        loadedCount++;
-        if (loadedCount === 1) {
-          drawFrame(0);
+        if (i < priorityCount) {
+          priorityLoaded++;
+          if (priorityLoaded === 1) drawFrame(0);
         }
       };
-      images.push(img);
-    }
-    imagesRef.current = images;
+      images[i] = img;
+    };
+
+    // Load priority frames first
+    for (let i = 0; i < priorityCount; i++) loadFrame(i);
+
+    // Load remaining frames after a short delay to not block main thread
+    requestIdleCallback(() => {
+      for (let i = priorityCount; i < FRAME_COUNT; i++) loadFrame(i);
+    });
 
     const trigger = ScrollTrigger.create({
       trigger: containerRef.current,
@@ -164,7 +176,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-between"
           >
-            <img src={logo} alt="Dr. Altair Menosso" className="h-7 md:h-10 w-auto" />
+            <img src={logo} alt="Dr. Altair Menosso" className="h-7 md:h-10 w-auto" fetchPriority="high" decoding="async" />
             <HamburgerMenu />
           </motion.div>
 

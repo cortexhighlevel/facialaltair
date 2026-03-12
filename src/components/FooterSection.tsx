@@ -42,6 +42,8 @@ const FooterSection = () => {
             <img
               src={logoFooter}
               alt="Logo Dr. Altair Menosso"
+              loading="lazy"
+              decoding="async"
               className="h-14 w-auto"
             />
             <p className="text-sm text-primary-foreground/60 leading-relaxed">

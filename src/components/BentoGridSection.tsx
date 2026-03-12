@@ -75,6 +75,7 @@ const BentoGridSection = () => {
                 src={serviceHarmonizacao}
                 alt="Harmonização facial natural"
                 loading="lazy"
+                decoding="async"
                 className="aspect-video w-full object-cover"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[hsl(214_84%_20%)] via-[hsl(214_84%_20%/0.4)] to-transparent" />
@@ -103,7 +104,7 @@ const BentoGridSection = () => {
             >
               <div className="p-5 sm:p-6 flex flex-col h-full">
                 <div className="flex items-center gap-2 mb-3">
-                  <img src={item.icon} alt={item.title} loading="lazy" className="w-10 h-10 rounded-xl object-cover" />
+                  <img src={item.icon} alt={item.title} loading="lazy" decoding="async" className="w-10 h-10 rounded-xl object-cover" />
                 </div>
                 <h3 className="text-lg font-semibold tracking-tight text-foreground">
                   {item.title}
@@ -124,7 +125,7 @@ const BentoGridSection = () => {
             >
               <div className="p-5 sm:p-6 flex flex-col h-full">
                 <div className="flex items-center gap-2 mb-3">
-                  <img src={item.icon} alt={item.title} loading="lazy" className="w-10 h-10 rounded-xl object-cover" />
+                  <img src={item.icon} alt={item.title} loading="lazy" decoding="async" className="w-10 h-10 rounded-xl object-cover" />
                 </div>
                 <h3 className="text-lg font-semibold tracking-tight text-foreground">
                   {item.title}
@@ -148,6 +149,7 @@ const BentoGridSection = () => {
                   src={drImg}
                   alt="Dr. Altair Menosso"
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "center 15%" }}
                 />

@@ -41,6 +41,7 @@ const DoctorSection = () => {
               src={drImg}
               alt="Dr. Altair Menosso - Especialista em Harmonização Facial"
               loading="lazy"
+              decoding="async"
               className="absolute inset-0 w-full h-full object-cover block"
               style={{ objectPosition: "center 15%", maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 70%, transparent 100%)" }}
             />
@@ -122,6 +123,8 @@ const DoctorSection = () => {
               <img
                 src={assinaturaImg}
                 alt="Assinatura Dr. Altair Menosso"
+                loading="lazy"
+                decoding="async"
                 className="h-20 md:h-28 w-auto brightness-0 invert"
               />
             </div>

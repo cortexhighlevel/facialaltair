@@ -79,6 +79,8 @@ const ImageComparison = ({ before, after, label }: CaseData) => {
           src={after}
           alt={`${label} - Depois`}
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
           draggable={false}
         />
 
@@ -91,6 +93,8 @@ const ImageComparison = ({ before, after, label }: CaseData) => {
             src={before}
             alt={`${label} - Antes`}
             className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
             draggable={false}
           />
         </div>
