@@ -47,10 +47,10 @@ const DoctorSection = () => {
 
             {/* Gradient fade at bottom on mobile */}
             <div
-              className="absolute bottom-0 left-0 right-0 h-96 lg:hidden pointer-events-none"
+              className="absolute bottom-0 left-0 right-0 h-60 lg:hidden pointer-events-none"
               style={{
                 background:
-                  "linear-gradient(to top, hsl(214 84% 20%) 0%, hsl(214 84% 20%) 35%, hsl(214 84% 20% / 0.95) 50%, hsl(214 84% 20% / 0.7) 70%, transparent 100%)",
+                  "linear-gradient(to top, hsl(214 84% 20%) 0%, hsl(214 84% 20% / 0.95) 25%, hsl(214 84% 20% / 0.7) 50%, transparent 80%)",
               }}
             />
           </motion.div>
