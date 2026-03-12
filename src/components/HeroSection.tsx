@@ -23,25 +23,45 @@ const HeroSection = () => {
   const currentFrameRef = useRef(0);
   const targetFrameRef = useRef(0);
   const rafRef = useRef<number>(0);
+  const lastDrawnFrameRef = useRef(-1);
 
-  const smoothFactor = 0.08;
+  const smoothFactor = 0.16;
+
+  const resizeCanvas = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const width = Math.floor(window.innerWidth * dpr);
+    const height = Math.floor(window.innerHeight * dpr);
+
+    if (canvas.width !== width || canvas.height !== height) {
+      canvas.width = width;
+      canvas.height = height;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+    }
+  }, []);
 
   const drawFrame = useCallback((frameIndex: number) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const img = imagesRef.current[frameIndex];
-    if (!img || !img.complete) return;
+    const safeFrame = Math.min(FRAME_COUNT - 1, Math.max(0, frameIndex));
+    if (lastDrawnFrameRef.current === safeFrame) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const img = imagesRef.current[safeFrame];
+    if (!img || !img.complete) return;
 
     const cW = canvas.width;
     const cH = canvas.height;
     const iW = img.naturalWidth;
     const iH = img.naturalHeight;
+
+    if (!iW || !iH) return;
 
     const scale = Math.max(cW / iW, cH / iH);
     const drawW = iW * scale;
@@ -51,19 +71,33 @@ const HeroSection = () => {
 
     ctx.clearRect(0, 0, cW, cH);
     ctx.drawImage(img, drawX, drawY, drawW, drawH);
+    lastDrawnFrameRef.current = safeFrame;
   }, []);
 
   const animate = useCallback(() => {
-    currentFrameRef.current +=
-      (targetFrameRef.current - currentFrameRef.current) * smoothFactor;
+    const delta = targetFrameRef.current - currentFrameRef.current;
 
-    const frame = Math.round(currentFrameRef.current);
-    drawFrame(frame);
+    if (Math.abs(delta) < 0.01) {
+      currentFrameRef.current = targetFrameRef.current;
+      drawFrame(Math.round(currentFrameRef.current));
+      rafRef.current = 0;
+      return;
+    }
+
+    currentFrameRef.current += delta * smoothFactor;
+    drawFrame(Math.round(currentFrameRef.current));
 
     rafRef.current = requestAnimationFrame(animate);
   }, [drawFrame]);
 
+  const startAnimationLoop = useCallback(() => {
+    if (rafRef.current) return;
+    rafRef.current = requestAnimationFrame(animate);
+  }, [animate]);
+
   useEffect(() => {
+    resizeCanvas();
+
     const images: HTMLImageElement[] = [];
     let loadedCount = 0;
 
@@ -83,27 +117,32 @@ const HeroSection = () => {
     const trigger = ScrollTrigger.create({
       trigger: containerRef.current,
       start: "top top",
-      end: "+=150%",
+      end: "+=110%",
       pin: true,
-      scrub: 0.5,
+      scrub: 0.2,
       onUpdate: (self) => {
         targetFrameRef.current = self.progress * (FRAME_COUNT - 1);
+        startAnimationLoop();
       },
     });
 
-    rafRef.current = requestAnimationFrame(animate);
-
     const handleResize = () => {
+      resizeCanvas();
+      lastDrawnFrameRef.current = -1;
       drawFrame(Math.round(currentFrameRef.current));
+      ScrollTrigger.refresh();
     };
+
     window.addEventListener("resize", handleResize);
 
     return () => {
       trigger.kill();
-      cancelAnimationFrame(rafRef.current);
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
       window.removeEventListener("resize", handleResize);
     };
-  }, [animate, drawFrame]);
+  }, [drawFrame, resizeCanvas, startAnimationLoop]);
 
   return (
     <div ref={containerRef} className="relative h-screen w-full overflow-hidden">
