@@ -129,7 +129,7 @@ const ImageComparison = ({ before, after, label }: CaseData) => {
         </span>
       </div>
 
-      <p className="text-sm font-medium text-muted-foreground">{label}</p>
+      {/* Label removed per client request */}
     </div>
   );
 };
