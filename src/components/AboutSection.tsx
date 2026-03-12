@@ -47,7 +47,7 @@ const AboutSection = () => {
                 loading="lazy"
                 className="w-full h-[300px] md:h-[520px] object-cover"
               />
-              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent" />
             </div>
           </motion.div>
 
