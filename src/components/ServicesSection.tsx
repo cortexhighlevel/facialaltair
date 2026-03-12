@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 import serviceHarmonizacao from "@/assets/service-harmonizacao-new.jpg";
-import servicePreenchimento from "@/assets/service-preenchimento.jpg";
+import servicePreenchimento from "@/assets/service-preenchimento-new.jpg";
 import serviceBotox from "@/assets/service-botox-new.jpg";
 import serviceRinomodelacao from "@/assets/service-rinomodelacao.jpg";
 import serviceBioestimuladores from "@/assets/service-bioestimuladores.jpg";
