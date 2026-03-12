@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import testimonialsBg from "@/assets/testimonials-bg.jpg";
